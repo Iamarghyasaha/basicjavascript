@@ -529,7 +529,7 @@
 //
 // console.log(array[5]); // here out of index don't give error it will give undefined
  
-//------------ array referance: ------------
+//----------------array referance: and spread operator----------------
 // if we copy a array be "=" operatoe it becomes 
 // shallow copy: if any of the array updated it will make change to both
 // let arr1 =[1,2,3,4,]; // arr1 is referencing to a same memory loacation abc123
@@ -538,9 +538,37 @@
 // console.log(arr1);------->//o/p: [ 1, 2, 3, 4, 5 ]
 // console.log(arr2);------->//o/p: [ 1, 2, 3, 4, 5 ]
 //
-// to avoid the spread [...] operator comes to picture internally it copy by for loop 
+// to avoid this spread [...] operator comes to picture internally it copy by for loop 
 // let arr1 =[1,2,3,4,];
 // let arr2 =[...arr1] ;
 // arr1.push(5);
 // console.log(arr1)// [ 1, 2, 3, 4, 5 ]
 // console.log(arr2)//[ 1, 2, 3, 4 ]---> by using spread operator a seperate array is created for the copied array
+// 
+//---------------------------array push() and concat()-----------------
+// Mutable object(can be chaged) and Immutable object (can't be changed)
+// mutable: array Object; // original array can be manipulated
+// immutable: string object; // original string can't be changed
+
+// let str = "arghya kdk  kjdjv";
+// str.concat("hello");
+// console.log(str); // o/p:arghya kdk  kjdjv --->orginal string not changed
+// console.log(str.push("hjj")); // error ---> we can't use push in string
+
+// let arr1 = [4,8,6,8,6];
+// arr1.push(8);
+// console.log(arr1); // mutable obj the original array chenged //[ 4, 8, 6, 8, 6, 8 ]
+// arr1.concat(4); // concacat() does not change the original array  
+// console.log(arr1); // [ 4, 8, 6, 8, 6, 8 ]
+// arr1.push(8,7,55);// we can add multiple item by push method 
+// console.log(arr1); 
+// O/P: 
+// [
+//     4, 8, 6,  8, 6,
+//     8, 8, 7, 55
+//   ]
+// let arr2 = [7,8,9,8];
+// arr2.concat(5,6); // concat doesn't change the original object and concat also can concatinate multiple object
+// console.log(arr2);
+// let arr3 = arr2.concat(5,6); 
+// console.log(arr3);//[ 7, 8, 9, 8, 5, 6 ]
