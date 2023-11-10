@@ -666,4 +666,31 @@
 // arr1.sort(makedescsort);
 // console.log(arr1)// 66, 33, 22, 11, 9, 8,  7,  5,  4, 2
 //
-//-------------------------split() join()--------------------------
+//-------------------------split() reverse() join()--------------------------
+// split()---> split(parameter) splits array or string by showing the passing parameters
+// split(" ")--> split into different objects whenever it shows space
+// reverse()--> reverse the string or object and manipulate the original string
+// join()--> join(parameter)--> joins wherever it shows the parameter
+
+//  const inputstr = "he is a good boy"
+//  const newstr = inputstr.split(" ");
+//  console.log(newstr); // [ 'he', 'is', 'a', 'good', 'boy' ]
+//  const newstr2 = inputstr.split("");
+// //  console.log(newstr2);
+//  // o/p:
+// //  [
+// //     'h', 'e', ' ', 'i',
+// //     's', ' ', 'a', ' ',
+// //     'g', 'o', 'o', 'd',
+// //     ' ', 'b', 'o', 'y'
+// //   ]
+// // console.log(newstr2.reverse());
+// // o/p:
+// // [
+// //     'y', 'o', 'b', ' ',
+// //     'd', 'o', 'o', 'g',
+// //     ' ', 'a', ' ', 's',
+// //     'i', ' ', 'e', 'h'
+// //   ]
+// console.log(newstr2.join("")); // o/p: he is a good boy
+//
