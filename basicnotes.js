@@ -567,8 +567,103 @@
 //     4, 8, 6,  8, 6,
 //     8, 8, 7, 55
 //   ]
+// let arr1 = [8,9,4,5];
 // let arr2 = [7,8,9,8];
 // arr2.concat(5,6); // concat doesn't change the original object and concat also can concatinate multiple object
 // console.log(arr2);
 // let arr3 = arr2.concat(5,6); 
 // console.log(arr3);//[ 7, 8, 9, 8, 5, 6 ]
+// let arr4 = [7,8,8];
+// let arr5 = arr1.concat(arr2,arr3,arr4); // we can concat multiple array to an array 
+// console.log(arr5);
+
+//-----------------------------pop() , slice(), splice()----------------------
+
+// pop() = Removes the last element from an array and returns it. 
+//         If the array is empty, undefined is returned and the array is not modified.
+// slice() = It returns a shallow copy of a slice. It don't change the original array. 
+// *****slice(starting index, ending index)*****include starting index but exclude ending index
+//           if there is no ending index that means it slice till the end as substring()
+//           inside slice if there is negetive index, it means slicing from last part
+//           we can do slicing in a string also.
+// splice() = It  can delete and as well as add depding upon condition. It changes the
+//            original array.The zero-based location in the array from which to start removing elements.
+//            Removes elements from an array and, if necessary, inserts new elements in their place, 
+//            returning the deleted elements.
+//****splice(strating index, no of element to delete)****(including starting index, elemments to delete)
+//to add element--->splice(before strating index, 0, "element to add")
+// 
+// ***pop()***
+// let arr1 = [8,9,4,5];
+// let poppedelement = arr1.pop();
+// console.log(arr1); // pop: will change the actual element
+// console.log("popped element :",poppedelement);
+
+// ***slice()***
+// let arr1 = [8,9,4,5];
+// let slicedelement = arr1.slice(2,3);// slice the index 2 element (index 2 element to index 3(excluded))
+// console.log(arr1); // o/p: [ 8, 9, 4, 5 ]
+// console.log(slicedelement);// [4]
+// console.log(arr1.slice(-1));// [5] ---> -1 means last element (e.g; -2 means last 2 elements)
+// console.log(arr1.slice(1,-2));// [9]---> starting index 1 and ending endex last 2 element which is excluded
+// console.log(arr1.slice(1)); // [ 9, 4, 5 ] --> it means from index 1 to end 
+// let str = ["apple","hello","arghya","jrl"];
+// console.log(str.slice(1,2));// o/p: [ 'hello' ]
+// let str1 = "arghya";
+// console.log(str1.slice(1));// rghya
+// console.log(str1.charAt(0).toUpperCase()+ str1.slice(1)); // Arghya
+
+// **** splice()****
+// let str = ["apple","hello","arghya","jrl"];
+// str.splice(1,2);
+// console.log(str); //[ 'apple', 'jrl' ]
+// let str1 = ["apple","hello","arghya","jrl"];
+// console.log(str1.splice(1)); // [ 'hello', 'arghya', 'jrl' ]
+// let str2 = ["apple","hello","arghya","jrl"];
+// str2.splice(1,0,"react js")// it will add react js **before** index 1
+// console.log(str2); // [ 'apple', 'react js', 'hello', 'arghya', 'jrl' ]
+//
+//--------------------includes(any)--------------
+// return bolean value 
+// as string in array also there is include function
+// const availablesize =["S","M","L","XL","XXL","XXXL"];
+// const rl = require("readline-sync");
+// let usersize = rl.question("Enter your size: ");
+// if(availablesize.includes(usersize)){
+//     console.log("size is available");
+// }
+// else{
+//     console.log("size is not avilable");
+// }
+
+//------------------array sort()----------------------
+// sort() = it changes the original array and sort in ascending to desending order  
+// lexicographical it works as string manner. so, even if we apply on number
+//  const fruits = ["apple","mango","orange","banana"];
+//  fruits.sort();
+//  console.log(fruits);//o/p:   [ 'apple', 'banana', 'mango', 'orange' ]
+// let arr = [9,8,7,5,4,2,8];
+// arr.sort();
+// console.log(arr); //[  2, 4, 5, 7, 8, 8, 9]
+// let arr1 =[9,8,7,5,4,2,11,22,33,66]
+// arr1.sort();
+// console.log(arr1)// [11,  2, 22, 33, 4, 5, 66,  7,  8, 9]--> it's  not in sorted manner 
+// because it perform sort() operation as string as per convrting themserves to string (UTF 16)
+// lexicographically 11's ascii is ascending compared to 2
+// So, to make sort() work in number
+
+// let arr1 =[9,8,7,5,4,2,11,22,33,66]
+// function makeascsort(a,b){
+//     return a-b; // ascending order--> It's comparing value 9 and 8 (9-8) if posetive answer came
+//                 // switch position
+// }
+// function makedescsort(a,b){
+//     return b-a;// descending order-->It's comparing value 8 and 9 (8-9) if negative answer came
+//     // switch position
+// }
+// arr1.sort(makeascsort);
+// console.log(arr1);// 2,  4,  5,  7,  8, 9, 11, 22, 33, 66
+// arr1.sort(makedescsort);
+// console.log(arr1)// 66, 33, 22, 11, 9, 8,  7,  5,  4, 2
+//
+//-------------------------split() join()--------------------------
