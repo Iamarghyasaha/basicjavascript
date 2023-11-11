@@ -741,15 +741,32 @@
 
 
 //---------------------------------------------Object--------------------------------------
+
+
 // object literal:
 // {key: value}
-const personobj = {
-    username: "arghya", // property
-    comapny: "LTIM",
-    age: 25,
-    tech: ["html","css","javascript","react js"],
-    "is mentor": true // when key is multiword character then we should 
-};
-console.log(personobj.age);
-console.log(personobj["is mentor"]);
+// const personobj = {
+//     username: "arghya", // property
+//     comapny: "LTIM",
+//     age: 25,
+//     tech: ["html","css","javascript","react js"],
+//     "is mentor": true // when key is multiword character then we should 
+// };
+// console.log(personobj.age);// either we can access object with " . "
+// console.log(personobj["is mentor"]); // with multiword character we have to access the value like this only
+// console.log(personobj["comapny"]);// we can access every elemnt by this way also.
+//-----------------------------------functions as property of object-------------------------------------
 
+// const obj ={
+//     username : "arghya",
+//     greet: function  (){                // either you add function inside object like this by key as function name and parameter as function{}
+//                                         // like anyonymous function
+//         console.log("Hello! good morning");
+//     },
+//     bye(){
+//         console.log("Bye bye"); // or, directly you can add function declaration 
+//     }
+// }
+
+// obj.bye(); // Bye bye
+// obj.greet();// Hello! good morning
