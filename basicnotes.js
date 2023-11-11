@@ -770,3 +770,36 @@
 
 // obj.bye(); // Bye bye
 // obj.greet();// Hello! good morning
+
+// -----------------------------object computation------------------
+// const rl = require("readline-sync");
+// const key = rl.question("What is the key: ");
+// const course = rl.question("tell the course: ")
+// const obj ={
+//     username : "arghya",
+//     stream : "CE",
+//     phone: 9874157553,
+//     [course]: "course not available" // this [] bracket tells course is a variable not a direct key
+//                                     // whatever course you input it will take as a variable and 
+// }
+
+// //***** add element into obj:****
+
+// obj.usercity = "kolkata"; // we can add element like this
+// obj.userstate = "WB";
+
+// console.log(obj);
+// // {
+// //     username: 'arghya',
+// //     stream: 'CE',
+// //     phone: 9874157553,
+// //     usercity: 'kolkata',
+// //     userstate: 'WB'
+// //   }
+// //
+// console.log(obj[key]); // by this we can print the value of any provided key
+// console.log(`${course}:`,obj[course]); // course not available
+//
+//------------------- for in on object------------------
+// in object---> for in works different than in array
+// by using "in" we  can ensure is the value in the object
