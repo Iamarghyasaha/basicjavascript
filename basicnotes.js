@@ -917,6 +917,7 @@
 //      phone: 9874157553
 // }
 // let {address:{city,state}} = obj4; // for nested object we can destruct like this also then we can access this only with the child object
+// let {address:{city}} = obj4; // only city distructed
 // console.log(city);// Kolkata
 
 
