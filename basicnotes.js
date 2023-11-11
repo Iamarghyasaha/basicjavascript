@@ -694,3 +694,41 @@
 // //   ]
 // console.log(newstr2.join("")); // o/p: he is a good boy
 //
+//---------------------Spread (...)-----------------------
+
+// The JavaScript spread operator ( ... ) allows us to quickly copy all or part of an existing array or object into another array or object.
+
+// it actually unpack the array 
+
+// to add  element to array, instead of push we can spread the array and add element to it as well as another array.
+
+// const arr1 = [1,2,3,4,5];
+// console.log(arr1); // [ 1, 2, 3, 4, 5 ]
+// console.log(...arr1);// 1 2 3 4 5 --> it becomes unpacked,it't not an array anymore.
+// const arr2 = [6,7,8,9]
+// arr3 = [...arr1,...arr2,10,11,13]
+// console.log(arr3);
+// [
+//     1,  2, 3, 4,  5,
+//     6,  7, 8, 9, 10,
+//    11, 13
+//  ]
+
+//------------------Destructuring Array--------------------
+
+// The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+
+// suppose we want to store individual value of an array to individual variable it's part of destruction 
+
+// const num = [1,2,3];
+// const [a,b,c] = num; // this called destructuring a conatins 1, b contain 2, c conatin 3
+// console.log(a); // 1
+// console.log(b); // 2
+// console.log(c); // 3
+
+// const array1 = [1,2,3,["arghya","absk","sjdjj"],{username:"arghya"}]
+
+// const [,,,names,userdetails] = array1; // use this syntax to skip unnecessery elements
+// console.log(names); // [ 'arghya', 'absk', 'sjdjj' ]
+// console.log(userdetails); // { username: 'arghya' }
+
