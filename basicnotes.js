@@ -893,7 +893,7 @@
 // }
 // let{username,...rest} = obj2; // spread operator rest destruct addresss and phone parameter
 // console.log(rest);// { address: { city: 'Kolkata', state: 'WB' }, phone: 9874157553 }
-
+//******************************************************
 // let obj3 = {
 //     username: "Arghya",
 //     address:{
@@ -902,11 +902,22 @@
 //             },
 //      phone: 9874157553
 // }
-
+//******************************************************* */
 // let {username : uname, address: useraddress } = obj3; // change key name (username to---> uname) and (address to--> useraddress)
 // console.log(uname);// Arghya
 // console.log(useraddress); // { city: 'Kolkata', state: 'WB' }
 // console.log(username);// it will give error now
+//********************************************************* */
+// let obj4= {
+//     username: "Arghya",
+//     address:{
+//         city:"Kolkata",// this is nested object
+//         state:"WB"
+//             },
+//      phone: 9874157553
+// }
+// let {address:{city,state}} = obj4; // for nested object we can destruct like this also then we can access this only with the child object
+// console.log(city);// Kolkata
 
 
 
