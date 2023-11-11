@@ -666,7 +666,7 @@
 // arr1.sort(makedescsort);
 // console.log(arr1)// 66, 33, 22, 11, 9, 8,  7,  5,  4, 2
 //
-//-------------------------split() reverse() join()--------------------------
+//--------------------------split() reverse() join()-------------------------------
 // split()---> split(parameter) splits array or string by showing the passing parameters
 // split(" ")--> split into different objects whenever it shows space
 // reverse()--> reverse the string or object and manipulate the original string
@@ -800,6 +800,49 @@
 // console.log(obj[key]); // by this we can print the value of any provided key
 // console.log(`${course}:`,obj[course]); // course not available
 //
-//------------------- for in on object------------------
+//------------------- for in on object--------------------
+
 // in object---> for in works different than in array
-// by using "in" we  can ensure is the value in the object
+// by using "in" we  can ensure is the key in the object or not return
+// syntax-->"key" in object
+// const obj = {
+//     username: "arghya",
+//     age: 23,
+//     address:"Westbengal"
+// }
+// console.log("age" in obj ); // return true 
+// console.log("name" in obj ); // return false
+// for(let key in obj){
+//     console.log(obj[key]); // it will print entire value of the object
+// }
+// o/p: 
+
+// arghya
+// 23
+// Westbengal
+
+//-------------------Object reference & shallow copy-------------
+
+// as array ---> in object aslo take shallow copy and copied object referencing to the main object. 
+// in simple words object copied by reference not value
+// const obj1 = {
+//     username: "Arghya",
+//     city:"Kolkata",
+//     state:"WB"
+// }
+
+// const obj2 = obj1;
+// obj1.city= "Hyderabad"
+// console.log(obj2); // { username: 'Arghya', city: 'Hyderabad', state: 'WB' } // both changed bechacuse it's saved as reference
+// console.log(obj1) // { username: 'Arghya', city: 'Hyderabad', state: 'WB' } // if we add another parameter it will add to both object
+
+// in place of spread operator here we use----***Object.assign(target,source)*** --- to copy object to different object with out storing the reference but it's also a ***shallow copy***
+
+// const obj1 = {
+//     username: "Arghya",
+//     city:"Kolkata",
+//     state:"WB"
+// }
+
+// const obj2 = Object.assign({},obj1); // coping to blank object then assign to another object, so, it's not stored by another array's reference
+// console.log(obj2);                   // but still it's a shallow copy not a deep copy
