@@ -870,10 +870,43 @@
 // it checks is the place key is present in the object or not. If not then don't check the next attribute just output "undefined" and if found then only check the next attribute
 // like variables or properties , with unmentioned function you don't get undefined, you get an error 
 
-//-------------------------------------Destructuring Objects------------------------
+//-------------------------------------Destructuring Objects-----------------------------
+// let obj1 = {
+//     username: "Arghya",
+//     address:{
+//         city:"Kolkata",// this is nested object
+//         state:"WB"
+//             },
+//      phone: 9874157553
+// }
+// let {username,address,phone}=obj1; // we have to mention the key inside the empty object o destruct an object
+// console.log(username); // Arghya
 
+//-------------------spread in destructing object------------
+// let obj2 = {
+//     username: "Arghya",
+//     address:{
+//         city:"Kolkata",// this is nested object
+//         state:"WB"
+//             },
+//      phone: 9874157553
+// }
+// let{username,...rest} = obj2; // spread operator rest destruct addresss and phone parameter
+// console.log(rest);// { address: { city: 'Kolkata', state: 'WB' }, phone: 9874157553 }
 
+// let obj3 = {
+//     username: "Arghya",
+//     address:{
+//         city:"Kolkata",// this is nested object
+//         state:"WB"
+//             },
+//      phone: 9874157553
+// }
 
+// let {username : uname, address: useraddress } = obj3; // change key name (username to---> uname) and (address to--> useraddress)
+// console.log(uname);// Arghya
+// console.log(useraddress); // { city: 'Kolkata', state: 'WB' }
+// console.log(username);// it will give error now
 
 
 
