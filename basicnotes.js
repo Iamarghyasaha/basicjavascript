@@ -851,11 +851,26 @@
 // Object.assign(target,source) works poperly when there is no nested object, but in case of nested object it will change the both array is one manipulated
 //
 //-----------------------Optional Chaining-----------------
+// (object?.attribute1?.nestedattributed)
+// const obj1 = 
+// {
+//         username: "Arghya",
+//         address:{
+//             city:"Kolkata",// this is nested object
+//             state:"WB"
+//         },
+//         phone: 9874157553
+//      }
+// console.log(obj1.address.city); // Kolkata
+// console.log(obj1.address.landmark); // Undefined
+// console.log(obj1.address?.landmark);// undefined // this is Optional Chaining 
+// console.log(obj1.place?.landmark);// undefined 
+// console.log(obj1?.address?.landmark)// we can do optional chaining that way also(At first it will check obj1 is present of not, if not then return undefined. if found then only check the next attribute)
+// the difference between optional chaining normal chaining is when array "obj1.place?.landmark" is searching for its attributes when it sees "?"
+// it checks is the place key is present in the object or not. If not then don't check the next attribute just output "undefined" and if found then only check the next attribute
+// like variables or properties , with unmentioned function you don't get undefined, you get an error 
 
-
-
-
-
+//-------------------------------------Destructuring Objects------------------------
 
 
 
