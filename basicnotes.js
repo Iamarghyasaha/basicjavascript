@@ -726,9 +726,30 @@
 // console.log(b); // 2
 // console.log(c); // 3
 
-// const array1 = [1,2,3,["arghya","absk","sjdjj"],{username:"arghya"}]
+// const array1 = [1,2,3,["arghya","absk","sjdjj"],{username:"arghya"},4,5,6,7]
 
 // const [,,,names,userdetails] = array1; // use this syntax to skip unnecessery elements
 // console.log(names); // [ 'arghya', 'absk', 'sjdjj' ]
 // console.log(userdetails); // { username: 'arghya' }
+// // we can use spread operator to take rest of the elemnt to a single element suppose we wat to take 4,5,6.. destructure to an array
+// const[,,,,,...arraydist]= array1; // storing 4, 5, 6, 7  to an array by destructuring the aary
+// console.log(arraydist); // [ 4, 5, 6, 7 ]
+// console.log(array1);
+
+//
+//----------------------------------------------------------------------------------------------------------------------------
+
+
+//---------------------------------------------Object--------------------------------------
+// object literal:
+// {key: value}
+const personobj = {
+    username: "arghya", // property
+    comapny: "LTIM",
+    age: 25,
+    tech: ["html","css","javascript","react js"],
+    "is mentor": true // when key is multiword character then we should 
+};
+console.log(personobj.age);
+console.log(personobj["is mentor"]);
 
