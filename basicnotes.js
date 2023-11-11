@@ -844,5 +844,50 @@
 //     state:"WB"
 // }
 
-// const obj2 = Object.assign({},obj1); // coping to blank object then assign to another object, so, it's not stored by another array's reference
-// console.log(obj2);                   // but still it's a shallow copy not a deep copy
+// const obj2 = Object.assign({},obj1); // coping to blank object then assign to another object, so, it's not stored by another array's reference. but still it's a shallow copy not a deep copy
+// obj1.city ="Hyderabad";
+// console.log(obj1); // { username: 'Arghya', city: 'Hyderabad', state: 'WB' }
+// console.log(obj2);  // { username: 'Arghya', city: 'Kolkata', state: 'WB' }
+// Object.assign(target,source) works poperly when there is no nested object, but in case of nested object it will change the both array is one manipulated
+//
+//-----------------------Optional Chaining-----------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
