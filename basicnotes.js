@@ -953,7 +953,7 @@
 //     age: 19,
 //     stream: "CE",
 //     greetuser(){
-//         console.log(`Hello! ${this.uname} age: ${this.age} stream: ${this.stream}`); // implicit binding
+//         console.log(`Hello! ${this.uname} age: ${this.age} stream: ${this.stream}`); // implicit binding--> here this refers to the object,  but we can't use it with arrow function (if we use this will refer to window object not to the parent object)
 //     }
 // }
 
@@ -1031,10 +1031,21 @@
 // res(); // Arghya B.tech undefined
 // res("2022"); // Arghya B.tech 2022 ---> we can pass parameter this way also.
 //---------------------------------------- new keyword and constructor function--------------------------------------
+
 //  *** Constructor function technically is a regular function. It has 2 convention. They are named with capital letter first.
 // they should be executed only with "new" operator
+// it works like class and object pattern
 
-
+// function User(username,userage){
+//     this.name=username,
+//     this.age=userage // here this keyword works like, it refers to the object that is executing the function
+// }
+// const user1 = new User("Arghya",23); // new keyword makes user1 object with parameters
+// const user2 = new User("Rahul",22);
+// console.log(user1); //User { name: 'Arghya', age: 23 }
+// console.log(user2);// User { name: 'Rahul', age: 22 }
+// console.log(user1.age);c// 23
+// console.log(user2.age); // 22
 
 
 
