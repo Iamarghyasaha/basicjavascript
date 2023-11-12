@@ -902,12 +902,12 @@
 //             },
 //      phone: 9874157553
 // }
-//******************************************************* */
+//********************************************************/
 // let {username : uname, address: useraddress } = obj3; // change key name (username to---> uname) and (address to--> useraddress)
 // console.log(uname);// Arghya
 // console.log(useraddress); // { city: 'Kolkata', state: 'WB' }
 // console.log(username);// it will give error now
-//********************************************************* */
+//**********************************************************/
 // let obj4= {
 //     username: "Arghya",
 //     address:{
@@ -919,21 +919,120 @@
 // let {address:{city,state}} = obj4; // for nested object we can destruct like this also then we can access this only with the child object
 // let {address:{city}} = obj4; // only city distructed
 // console.log(city);// Kolkata
+//
+//----------------------------------Object Methods-----------------------
 
+// Object.entries(object name);--> retrun array of key value pair in array inside array manner
+// Object.keys(object name);-->return array of keys
+// Object.values(object name);--> return array of values
+// const obj = {
+//     uname :"arghya",
+//     age: 23,
+//     stream: "CE"
+// }
+// console.log(Object.entries(obj)); // [ [ 'uname', 'arghya' ], [ 'age', 23 ], [ 'stream', 'CE' ] ]
+// console.log(Object.values(obj)); // [ 'arghya', 23, 'CE' ]
+// console.log(Object.keys(obj));// [ 'uname', 'age', 'stream' ]
 
+//------------------------- this keywords-----------------------
 
+// this keyword: refers to the object that is executing the function
 
+// const obj = {
+//     uname :"arghya",
+//     age: 23,
+//     stream: "CE",
+//     greetuser(){
+//         console.log(`Hello! ${this.uname} age: ${this.age} stream: ${this.stream}`); // implicit binding
+//     }
+// };
+// obj.greetuser();
+// console.log(this); // this is a window object which is in global space
+// const obj1 = {
+//     uname :"Rafafa",
+//     age: 19,
+//     stream: "CE",
+//     greetuser(){
+//         console.log(`Hello! ${this.uname} age: ${this.age} stream: ${this.stream}`); // implicit binding
+//     }
+// }
 
+// const obj2 = {
+//     uname :"kcnkd",
+//     age: 45,
+//     stream: "CSE",
+//     greetuser(){
+//         console.log(`Hello! ${this.uname} age: ${this.age} stream: ${this.stream}`); // implicit binding
+//     }
+// }
 
+// to use greetuser function we have to write the same function with this keyword this called implicit binding
+// to overcome this we have Explicit binding
+//
+//---------------------------function borrowing (Explicit Binding)---> call() apply() bind() ----------------------------------
 
+// call apply bind is method of function not object
+// call()--.The call() method calls the function directly and sets this to the first argument passed to the call method and if any other sequences of arguments preceding the first argument are passed to the call method then they are passed as an argument to the function.
+// *****************************Syntax: functionname.call(objectname,parameter in string)*************************
+//apply()--The apply() method calls the function directly and sets this to the first argument passed to the apply method and if any other arguments provided as an array are passed to the call method then they are passed as an argument to the function.
+// in apply we pass extra parameter as array
+//******************************Syntax: functionname.apply(objectname,parameter in array)****************************/
+//bind()---The bind() method creates a new function and when that new function is called it set this keyword to the first argument which is passed to the bind method, and if any other sequences of arguments preceding the first argument are passed to the bind method then they are passed as an argument to the new function when the new function is called.
+// ******************Syntax:variable = functionname.bind (objectname,parameter in string)***************************
+//*******************to add another parameter --> variable(parameter)******************************************** */
+// // const obj1 = {
+// //     username: "Arghya",
+// //     age: 23,
+// //     sayname(){
+// //         console.log(this.name);// this type of binding function to object is called implicit binding
+// //     }
+// // }
+// // const obj2 = {
+// //     username: "ksckas",
+// //     age: 25,
+// //     sayname(){
+// //         console.log(this.name);// this type of binding function to object is called implicit binding
+// //     }
+// // }
+// // const obj3 = {
+// //     username: "lmcsl",
+// //     age: 30,
+// //     sayname(){
+// //         console.log(this.name);// this type of binding function to object is called implicit binding
+// //     }
+// // }
 
+// // sayname()--> function repeted multiple times to reduce this we use function borowing
 
+// const obj1 = {
+//     username: "Arghya",
+//     age: 23,
+// }
+// const obj2 = {
+//     username: "ksckas",
+//     age: 25,
+// }
+// const obj3 = {
+//     username: "lmcsl",
+//     age: 30,
+// }
+// function sayname(degree,batch){
+//     console.log(this.username,degree,batch); // explicit binding of this
+// }
+// sayname.call(obj1,"B.tech","2022"); // Arghya B.tech 2022 // in call() we pass parameters as string
+// sayname.call(obj2,"B.tech","2022"); // ksckas B.tech 2022
+// sayname.call(obj3,"B.tech","2022"); // lmcsl B.tech 2022
 
+// sayname.apply(obj1,["B.tech", "2022"]); // Arghya B.tech 2022 // in apply() if there any parameters, we pass parameters as array of strings 
 
-
-
-
-
+// // bind works little different, we have to store the object 
+// console.log(obj1); // { username: 'Arghya', age: 23 }
+// const res = sayname.bind(obj1,"B.tech"); // takes object as first parameter and store to an variable then call the variable, even you can add more parameters to the variable at the time of calling
+// res(); // Arghya B.tech undefined
+// res("2022"); // Arghya B.tech 2022 ---> we can pass parameter this way also.
+//---------------------------------------- new keyword and constructor function--------------------------------------
+//  *** Constructor function technically is a regular function. It has 2 convention. They are named with capital letter first.
+// they should be executed only with "new" operator
 
 
 
