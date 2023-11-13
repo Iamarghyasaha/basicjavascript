@@ -1111,10 +1111,46 @@
 // output(); //calling the function by the variable name, )/p: Arghya Welcome to Home!
 
 //----------------------------------------Higher Order Function----------------------------------
+// Higher order function: A function that accaetps another function as an argument or returns a function or does the both called Higher Order Function.
 
 
+// function wrapper(){
+//     return "Welcome to Home!";
+// }
+
+// //Higher ordeer function
+
+// function greetmsg(name,innerfunc){ //another function as an argument 
+//     console.log(name,innerfunc());
+// }
+// greetmsg("arghya",wrapper);
+
+//HOF
+// function diplaymsg(){
+//     return function(){
+//         console.log("Hello from inner function")
+//     }
+// }
+
+// const output = diplaymsg();
+// output();
 
 
+// example of using higher order function-->>
 
-
-
+// function square(num){
+//     return num ** 2;
+// }
+// function cube(num){
+//     return num ** 3;
+// }
+// function hof(arr,wrapper){ // wrapper is the reference of the function it is equivalent to function hof(arr,square)
+//     let newarray =[];
+//     for(let num of arr){
+//         newarray.push(wrapper(num));
+//     }
+//     console.log(newarray)
+// }
+// let array = [1,2,3,4,5]
+// hof(array,square);
+// hof(array,cube);
