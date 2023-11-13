@@ -667,6 +667,7 @@
 // console.log(arr1)// 66, 33, 22, 11, 9, 8,  7,  5,  4, 2
 //
 //--------------------------split() reverse() join()-------------------------------
+//
 // split()---> split(parameter) splits array or string by showing the passing parameters
 // split(" ")--> split into different objects whenever it shows space
 // reverse()--> reverse the string or object and manipulate the original string
@@ -975,11 +976,11 @@
 // call()--.The call() method calls the function directly and sets this to the first argument passed to the call method and if any other sequences of arguments preceding the first argument are passed to the call method then they are passed as an argument to the function.
 // *****************************Syntax: functionname.call(objectname,parameter in string)*************************
 //apply()--The apply() method calls the function directly and sets this to the first argument passed to the apply method and if any other arguments provided as an array are passed to the call method then they are passed as an argument to the function.
-// in apply we pass extra parameter as array
+// in apply we pass extra parameter as array.
 //******************************Syntax: functionname.apply(objectname,parameter in array)****************************/
 //bind()---The bind() method creates a new function and when that new function is called it set this keyword to the first argument which is passed to the bind method, and if any other sequences of arguments preceding the first argument are passed to the bind method then they are passed as an argument to the new function when the new function is called.
 // ******************Syntax:variable = functionname.bind (objectname,parameter in string)***************************
-//*******************to add another parameter --> variable(parameter)******************************************** */
+//*******************to add another parameter --> variable(parameter)*********************************************/
 // // const obj1 = {
 // //     username: "Arghya",
 // //     age: 23,
@@ -1026,6 +1027,7 @@
 // sayname.apply(obj1,["B.tech", "2022"]); // Arghya B.tech 2022 // in apply() if there any parameters, we pass parameters as array of strings 
 
 // // bind works little different, we have to store the object 
+
 // console.log(obj1); // { username: 'Arghya', age: 23 }
 // const res = sayname.bind(obj1,"B.tech"); // takes object as first parameter and store to an variable then call the variable, even you can add more parameters to the variable at the time of calling
 // res(); // Arghya B.tech undefined
@@ -1044,16 +1046,69 @@
 // const user2 = new User("Rahul",22);
 // console.log(user1); //User { name: 'Arghya', age: 23 }
 // console.log(user2);// User { name: 'Rahul', age: 22 }
-// console.log(user1.age);c// 23
+// console.log(user1.age); // 23
 // console.log(user2.age); // 22
+//----------------------------------------------------------------------------------------------------------------------------
 
+//------------------------------------------------------Higher order Function-----------------------------------------------------
 
+// Pure Function: A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. 
+// It does not depend on any state or data change during a program's execution. Rather, it only depends on its input arguments.
 
+//  1. It takes an argument
+//  2. It should return something
+//  3. for same Input you should get the same output
+//  4. The result should not be influenced by the outer parameter
+//  5. It should not mutate the original argument 
 
+// this is a pure function 
+// function addelementtoarray(arr){
+//     const newarr = []; // if this newarr[] is declared outside the function the it's not a pure function. When any function can be manipuled by external parameter the  it's not a pure function
+//     newarr.push(...arr,5,6); // if we directly manipulate the original array then also it's not a pure array if the original array changed
+//     return newarr;
+// }
+// const arr1 = [1,2,3,4,];
+// const addedarray = addelementtoarray(arr1);
+// console.log(addedarray); // [ 1, 2, 3, 4, 5, 6 ]
 
+//--------------------------------------------------First class function--------------------------------------------------------------
 
+// First-Class Function: A programming language is said to have First-class functions if functions in that language are treated like other variables. So the functions can be assigned to any other variable or passed as an argument or can be returned by another function. JavaScript treat function as a first-class-citizens.
 
+// ***********function assigned to a variable****************
+// const greet = function(name){    // like here function is trated variables or "So the functions can be assigned to any other variable"
+//     console.log("Welcome to Home!",name); 
+// }
+// greet("Arghya"); // Welcome to Home! Arghya
 
+//************Function takes another function as aurgument */
+
+// function wrapper(){
+//     return "Welcome to Home!";
+// }
+// function greet(name,inner){ // Here we used wrapper function which is passed as an argument (**inner**)
+//     console.log(name,inner())
+// }
+// greet("Arghya",wrapper()); // Arghya Welcome to Home!, Here wrapper function passed as an argument
+
+// functionname()---> calling the function
+// functionname---> this returns the function reference
+
+//************Function returns another function reference **************/
+
+// function greetmsg(){
+//     function wrapper(){
+//         let name = "Arghya";
+//         console.log(name,"Welcome to Home!");
+//     }
+//     return wrapper; // function returning the reference of an function
+// }
+
+// greetmsg(); // it will not output anything;
+// greetmsg()(); // to call nested function we use this syntax
+// //Or we can;
+// const output = greetmsg(); // storing a funtion to a variable
+// output(); //calling the function by the variable name, )/p: Arghya Welcome to Home!
 
 
 
