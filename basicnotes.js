@@ -1158,14 +1158,36 @@
 //--------------------------------- Map - filter-----------------------------------
 
 // map and filter is higher order function used in array
-// it can take function as parameter so hof
+// it can take function as parameter so higher order function
+// map loop over the array
 // map returns an array
 // The Javascript map() method in JavaScript creates an array by calling a specific function on each element present in the parent array. It is a non-mutating method. Generally, the map() method is used to iterate over an array and call function on every element of the array. 
 
-
+// *********** use of map function ****************
 // const arr = [2,4,5,6];
 // function square(num,pow){
 //     return num ** pow;
 // }
 // const newarray = arr.map(square); //without using for loop, map use to impose function to entire array, so in map it takes function and works like a hof
 // console.log(newarray);
+
+// *********** use of map function ****************
+// // Input array
+// let arr = [2, 5, 6, 3, 8, 9];
+
+// // Using map to transform elements
+// let newArr = arr.map(function (val, index) {
+// 	return { key: index, value: val * val };
+// })
+
+// // Display output
+// console.log(newArr)
+// *********** use of map function ****************
+// let arr = [2, 5, 6, 3, 8, 9];
+// // Using map to transform elements
+// let newArr = arr.map(function (val, index) { // map can give index also
+// 	return { key: index, value: val * val };
+// })
+// // Display output
+// console.log(newArr)
+
