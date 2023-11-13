@@ -105,7 +105,14 @@
 
 // The following code would be invalid:
 // number => return number * 3; // invalid because return keyword must also be omitted!
-// number => if (number === 2) { return 5 }; // invalid because if statements can't be returned
+//number => if (number === 2) { return 5 }; // invalid because if statements can't be returned
+
+// let arrowfunc = number =>{
+//     if(number>5){
+//         return 5;
+//     }
+// }
+// console.log(arrowfunc(6));
 
 // let sumorsub = (x,y)=>x>y?x-y:x+y;
 // console.log(sumorsub(15,85))
@@ -1155,7 +1162,7 @@
 // hof(array,square);
 // hof(array,cube);
 
-//--------------------------------- Map - filter-----------------------------------
+//--------------------------------- map() - filter() - reduce() -----------------------------------
 
 // map and filter is higher order function used in array
 // it can take function as parameter so higher order function
@@ -1190,4 +1197,45 @@
 // })
 // // Display output
 // console.log(newArr)
+//------------------------------------------filter-------------------------
+// filter is a Higher order function
+// The JavaScript Array filter() Method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method. 
 
+//  const arr = [4,5,9,8,1,2,7];
+//  const filteredarr = arr.filter(number => number>5); // [ 9, 8, 7 ] // it's equivalent to (number=> return number>5)
+//  console.log(filteredarr)
+
+//  const arr1 = [400,5000,956474,84632,1000,255,755];
+//  const zerodivarr = arr1.filter(number=>(number%100 === 0));
+// console.log(zerodivarr);
+
+//------------------------------------ reduce -----------------------------
+//The Javascript arr.reduce() method in JavaScript is used to reduce the array to a single value and executes a provided function for each value of the array (from left to right) and the return value of the function is stored in an accumulator. 
+
+// const arr = [1,2,3,4,8,9];
+// const reducefunc = arr.reduce((acc,curr)=>acc+curr);
+// console.log(reducefunc);
+
+//**********reduce(function,starting value in accumulator)************
+
+// const arr = [1,2,3,4,8,9];
+// const reducefun = (acc,curr) => acc+curr;   // accumulator is acc here and curr is current object(curr itreate over the array and take every element as current object ). so it's returning the sum of the object
+// // 0 + 1--->1 stored in acc and passed to next
+// // 1 + 2--->3 stored in acc and passed to next
+// // 3 + 3--->6 stored in acc and passed to next
+// // 6 + 4--->10 stored in acc and passed to next
+// // 10 + 8--->18 stored in acc and passed to next
+// // 18 + 9---> 27 stored in acc and passed to next 
+// const output = arr.reduce(reducefun,6); // 6 is the starting value of acc // so it will start like 6 + 1 =7...and 7 is passed to next
+// console.log(output); // 6+27 = 33 as 6 is the starting value
+
+// ********************another example***************
+// const arr = [1,2,3,4,8,9];
+// const reducefunc = (acc,curr) => acc*curr;
+// const output = arr.reduce(reducefunc);// if only the fuction reference passed without any parameter that means the starting value is the the first elemet of the array as here the staring value is 1
+// console.log(output); // 1728
+
+// // the same written in upper we can do this that way also
+// const arr1 = [1,2,3,4,8,9];
+// const reducefunc1 = arr1.reduce(((acc,curr) => acc*curr),2); // written the total function in a single line and  and the staring value is set as 2, so here the value will be start to multliplied with 2
+// console.log(reducefunc1); // 3456
