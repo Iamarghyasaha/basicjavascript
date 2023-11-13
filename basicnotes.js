@@ -1086,10 +1086,10 @@
 // function wrapper(){
 //     return "Welcome to Home!";
 // }
-// function greet(name,inner){ // Here we used wrapper function which is passed as an argument (**inner**)
-//     console.log(name,inner())
+// function greet(name,inner){ // Here we used wrapper function which is passed as an argument (**inner**) ****actually we are passing the reference of the wrapper function
+//     console.log(name,inner())// calling the function 
 // }
-// greet("Arghya",wrapper()); // Arghya Welcome to Home!, Here wrapper function passed as an argument
+// greet("Arghya",wrapper); // Arghya Welcome to Home!, Here wrapper function passed as an argument like the reference 
 
 // functionname()---> calling the function
 // functionname---> this returns the function reference
@@ -1107,8 +1107,10 @@
 // greetmsg(); // it will not output anything;
 // greetmsg()(); // to call nested function we use this syntax
 // //Or we can;
-// const output = greetmsg(); // storing a funtion to a variable
+// const output = greetmsg(); // storing a funtion to a variable and storing the returned value og wrappers reference
 // output(); //calling the function by the variable name, )/p: Arghya Welcome to Home!
+
+//----------------------------------------Higher Order Function----------------------------------
 
 
 
