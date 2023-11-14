@@ -1229,7 +1229,7 @@
 // const reducefunc1 = arr1.reduce(((acc,curr) => acc*curr),2); // written the total function in a single line and  and the staring value is set as 2, so here the value will be start to multliplied with 2
 // console.log(reducefunc1); // 3456
 
-//----------------------------------Argument object----------------------------------
+//----------------------------------Argument object--------------------------------------
 
 //  Argument object in non arrow function: argument object is an array like object present locally inside a function and it contains value of all the argument passed to the function
 
@@ -1258,4 +1258,16 @@
 // }
 // addelement(4,5,6,7,6,8);
 //-------------------------------------------------------------
-//
+// ***************default value in function********************
+
+// function addfunc (a=10,b=10){ // default value of a and b declared as 10
+//     console.log(arguments); // [Arguments] { '0': 4, '1': 5 } for addfunc(4,5), [Arguments] { '0': 4 } for addfunc(4), [Arguments] {} for addfunc()
+//     console.log(arguments[0]);// 4 for addfunc(4,5), 4 for addfunc(4), undefined for addfunc()
+//     arguments[0]=9; // arguments[0] is changed to 9 but after passing it to the parameter so, it will not effect the output,it will just change the argument object
+//     console.log(arguments);//  [Arguments] { '0': 9, '1': 5 } for addfunc(4,5), [Arguments] { '0': 9 } for addfunc(4), [Arguments] {} for addfunc()
+//     return a+b;
+
+// }
+// console.log(addfunc(4,5)); // o/p: 9 
+// console.log(addfunc(4));// // o/p: 14 // default value of a and b declared as 
+// console.log(addfunc());// // o/p: 20 // default value of a and b declared as 
