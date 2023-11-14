@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            
+            border: 2px solid black;
+            background-color: blanchedalmond;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 15px;
+            margin-top: 300px;
+            
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+    <button id="stratbtn" class="btn">Start</button>
+    <button class="pausebtn btn">Pause</button>
+    <button id="stopbtn" class="btn">Stop</button>
+    </div>      
+    <script>
+        let start = document.getElementById("stratbtn");// to access the Start button
+        let pause = document.querySelector(".pausebtn");// to access the Pause button
+        let stop = document.querySelector("#stopbtn");// to access the Stop button
+        let all = document.querySelectorAll(".btn"); // select all button togather by same class, it will give an array of buttons
+
+    </script>
+</body>
+</html>
