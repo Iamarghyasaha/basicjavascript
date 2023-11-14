@@ -1341,7 +1341,9 @@
 // console.log(get_func_inner(4)); //9
 // console.log(get_func_inner(3));//8
 
-//----------------------------------------------------------------Coding drills---------------------------------------------
+//-------------------------------------------------------------------------------------------------------------------------------------------
+
+//--------------------------------------------------------Coding drills---------------------------------------------
 // **********Check Plaindrome*************
 // const rl = require("readline-sync");
 // const str = rl.question("enter the string: ")
@@ -1371,3 +1373,30 @@
 //     }
 // }
 // console.log(result);
+
+//********************Mask last characters asper user input*************/
+
+// const rl = require("readline-sync");
+// const str = rl.question("enter the string: ");
+// const num = rl.question("enter how many character you want to mask: ");
+// let maskedsymbol = "#".repeat(num);
+// let maskedstr = str.slice(0,str.length-num) + maskedsymbol;
+// console.log(maskedstr);
+
+//*****************encoded charaecter uptothe user provided input **********************
+// I/p: enter the string: arghya
+// enter encoded value: 1
+// O/p: bshizb
+
+// const rl = require("readline-sync");
+// const str = rl.question("enter the string: ");
+// const num = Number(rl.question("enter encoded value: "));
+// let encodedstr = "";
+// for(let i= 0;i<str.length;i++){
+//     let enchar = String.fromCharCode( str.charCodeAt(i)+num);
+//     encodedstr += enchar;
+// }
+// console.log(encodedstr);
+//
+//---------------------------------------DOM-------------------------------------
+
