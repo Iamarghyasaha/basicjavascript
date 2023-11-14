@@ -1300,3 +1300,74 @@
 // arrayadd(7,9,5,7,9,2,4);
 //
 //--------------------------------------Recursion-----------------------------------------------
+ // recursion is a programming term where the function calls itself
+//*************sum of numbers **********
+//  function calsum(number){
+//     let sum = 0;
+//     if(number>0){
+//         sum = number + calsum(number-1);
+//     }
+//     return sum;
+//  }
+//  console.log(calsum(10));
+// *****factorial with recursion*******
+// function factorial(num){
+//     if(num===1 || num==0){
+//         return num;
+//     }
+//     if(num>0){
+//     return num * factorial(num-1);
+//     }
+// }
+// console.log(factorial(5));
+
+//------------------------------------------Closure-----------------------------------------------
+// A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. Since JavaScript is event-driven so closures are useful as it helps to maintain the state between events.
+
+// Closure is the concept of function + lexical environment in which function it was created. so every function declared within another function then it has access to the scope chain of the outer function and the variables created within the scope of the outer function will not get destroyed.
+
+// A closure is the combination of the function bundled together with reference to its lexical environments is known as closure. In other words - A closure is a function that remembers its outer variable and can access them.
+
+
+// function foo(outer_arg) {
+
+// 	function inner(inner_arg) {
+// 		return outer_arg + inner_arg;
+// 	}
+// 	return inner;
+// }
+// let get_func_inner = foo(5);
+
+// console.log(get_func_inner(4)); //9
+// console.log(get_func_inner(3));//8
+
+//----------------------------------------------------------------Coding drills---------------------------------------------
+// **********Check Plaindrome*************
+// const rl = require("readline-sync");
+// const str = rl.question("enter the string: ")
+// let revstr ="";
+// for(let i =str.length-1;i>=0;i--){
+//     let newchar = str.charAt(i);
+//     revstr = revstr+newchar;
+//     newchar="";
+// }
+// if(str.toLowerCase===revstr.toLowerCase){
+//     console.log("The string is a palindromestring");
+// }
+// else {
+//     console.log("The string is not a palindromestring");
+// }
+// otherwise we can split--> to array then apply reverse() to it then----> join to string
+
+//************************Remove Vowel from string********************/
+
+// const rl = require("readline-sync");
+// const str = rl.question("enter the string: ")
+// let result = "";
+// for(let char of str){
+//     let vowel = "aeiouAEIOU";
+//     if(!vowel.includes(char)){
+//         result+=char;
+//     }
+// }
+// console.log(result);
