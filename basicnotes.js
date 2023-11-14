@@ -1271,3 +1271,32 @@
 // console.log(addfunc(4,5)); // o/p: 9 
 // console.log(addfunc(4));// // o/p: 14 // default value of a and b declared as 
 // console.log(addfunc());// // o/p: 20 // default value of a and b declared as 
+
+//-------------------------------------REST parameter--------------------------------------
+// The rest parameter is an improved way to handle function parameters, allowing us to more easily handle various inputs as parameters in a function. The rest parameter syntax allows us to represent an indefinite number of arguments as an array.
+
+// rest should be the last parameter in arguments
+
+//const arr = [7,9,5,7,9,2,4];
+// function arrayadd(...rest){ // rest will take here the rest parameters and used at last
+//     console.log(rest);// [7, 9, 5, 7, 9, 2, 4]
+//     let sum = 0;
+//     for( let i of rest){
+//         sum+=i;
+//     }
+//     console.log(sum); // 43
+// }
+// arrayadd(7,9,5,7,9,2,4);
+// ********************* another example of rest parameter using spread operator*********************
+// function arrayadd(a,b,...rest){ // rest will take here the rest parameters and used at last
+//     console.log("sum of first 2 elements is :", a+b);// sum of first 2 elements is : 16
+//     console.log(rest);// [7, 9, 5, 7, 9, 2, 4]
+//     let sum = 0;
+//     for( let i of rest){
+//         sum+=i;
+//     }
+//     console.log("The sum of rest elemets is: ",sum);// The sum of rest elemets is:  27
+// }
+// arrayadd(7,9,5,7,9,2,4);
+//
+//--------------------------------------Recursion-----------------------------------------------
