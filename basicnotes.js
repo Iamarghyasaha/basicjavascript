@@ -1179,17 +1179,6 @@
 // console.log(newarray);
 
 // *********** use of map function ****************
-// // Input array
-// let arr = [2, 5, 6, 3, 8, 9];
-
-// // Using map to transform elements
-// let newArr = arr.map(function (val, index) {
-// 	return { key: index, value: val * val };
-// })
-
-// // Display output
-// console.log(newArr)
-// *********** use of map function ****************
 // let arr = [2, 5, 6, 3, 8, 9];
 // // Using map to transform elements
 // let newArr = arr.map(function (val, index) { // map can give index also
@@ -1197,7 +1186,7 @@
 // })
 // // Display output
 // console.log(newArr)
-//------------------------------------------filter-------------------------
+//------------------------------------------filter()------------------------------
 // filter is a Higher order function
 // The JavaScript Array filter() Method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method. 
 
@@ -1209,7 +1198,7 @@
 //  const zerodivarr = arr1.filter(number=>(number%100 === 0));
 // console.log(zerodivarr);
 
-//------------------------------------ reduce -----------------------------
+//------------------------------------ reduce() -------------------------------------
 //The Javascript arr.reduce() method in JavaScript is used to reduce the array to a single value and executes a provided function for each value of the array (from left to right) and the return value of the function is stored in an accumulator. 
 
 // const arr = [1,2,3,4,8,9];
@@ -1239,3 +1228,34 @@
 // const arr1 = [1,2,3,4,8,9];
 // const reducefunc1 = arr1.reduce(((acc,curr) => acc*curr),2); // written the total function in a single line and  and the staring value is set as 2, so here the value will be start to multliplied with 2
 // console.log(reducefunc1); // 3456
+
+//----------------------------------Argument object----------------------------------
+
+//  Argument object in non arrow function: argument object is an array like object present locally inside a function and it contains value of all the argument passed to the function
+
+// function addelement(){
+//     console.log(arguments); //arguments is a keyword, [Arguments] { '0': 4, '1': 5, '2': 6, '3': 7, '4': 6, '5': 8 }
+// }
+// addelement(4,5,6,7,6,8);
+//-----------------------------------------------------------
+// function addelement(a,b){
+//      return a+b;
+// }
+// const result = addelement(4,5,6,7,6,8);
+// console.log(result);// 9, in javascript it's compute first 2 value in the  passed arguments
+//------------------------------------------------------------
+// function addelement(){
+//     for(let value of arguments){
+//         console.log(value);// print every values of the arguments
+//     }
+// }
+// addelement(4,5,6,7,6,8);
+//------------------------------------------------------------
+// function addelement(){
+//    console.log(arguments) // [Arguments] { '0': 4, '1': 5, '2': 6, '3': 7, '4': 6, '5': 8 }---> convert this to an array
+//    const arr = [...arguments];// converting to array by spread operator
+//    console.log(arr);// [ 4, 5, 6, 7, 6, 8 ]
+// }
+// addelement(4,5,6,7,6,8);
+//-------------------------------------------------------------
+//
