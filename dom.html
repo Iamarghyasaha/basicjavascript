@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            box-sizing: border-box;
+        }
         button{
             
             border: 2px solid black;
@@ -12,29 +15,85 @@
             border-radius: 8px;
             padding: 25px;
             margin: 15px;
-            margin-top: 300px;
-            
+            height: 100px;
+
         }
-        .btn{
+        .btnparent{
+            background-color: rgb(161, 151, 62);
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            
-            
+            align-items: center;
+            border: 2px solid black;
+            height: 500px;
+            width: 500px;
+            margin-left: 500px;
+            margin-top: 150px;
+
+        }
+        .btn-red{
+            background-color: rgb(142, 29, 29);
+            color: white;
+        }
+        .input{
+            width: 400px;
+            height: 35px;
+            border: 3px solid rgb(142, 29, 29);
+        }
+        .input:hover{
+            border: 3px solid rgb(41, 6, 6);
         }
     </style>
 </head>
-<body>
-    <div class="btn">
-    <button id="stratbtn" class="btn">Start</button>
-    <button class="pausebtn btn">Pause</button>
-    <button id="stopbtn" class="btn">Stop</button>
-    </div>      
+<body> 
+        <div class="btnparent">
+            <input type="text" class="input">
+            <button id="stratbtn" class="btn"><img src="/assets/icons8-start-button-50.png" alt="404">Play</button>
+            <button class="pausebtn btn"><img src="/assets/icons8-pause-50.png" alt="404">Pause</button>
+            <button id="stopbtn" class="btn"><img src="/assets/icons8-stop-48.png" alt="404">Stop</button>
+        </div>
     <script>
+        // those dom selector should be always written in top:
         let start = document.getElementById("stratbtn");// to access the Start button
         let pause = document.querySelector(".pausebtn");// to access the Pause button
-        let stop = document.querySelector("#stopbtn");// to access the Stop button
+        let stopb = document.querySelector("#stopbtn");// to access the Stop button
         let all = document.querySelectorAll(".btn"); // select all button togather by same class, it will give an array of buttons
+        let input = document.querySelector(".input")// select input class by dom selector
 
+        // start.addEventListener("click",()=>{
+        //     start.innerText = "Hello!";
+        // })
+        //The addEventListener() is an inbuilt function in JavaScript which takes the event to listen for, and a second argument to be called whenever the described event gets fired. 
+        // apply css class that way------>
+
+        // start.addEventListener("click",()=>{
+        //     start.classList.toggle("btn-red");// toggle means if you click it will on, if again it will off
+        // })
+        // pause.addEventListener("click",()=>{
+        //     pause.classList.toggle("btn-red");
+        // })
+        // stopb.addEventListener("click",()=>{
+        //     stopb.classList.add("btn-red");// add means if you click it will on, no off change here
+        // })
+        // input.addEventListener("change",()=>{// chnage is an event which tell whenever courser lost it's focus, this event will trigger.
+        //                                     //[input,focus, keyup is such events we can trigger as per need]
+        //     console.log(input.value);
+        // })
+
+        /**mouse events*/
+        // input.addEventListener("mousedown",(event)=>{// to use co-ordinate we can use this with different manner (with event.clientX and event.clientY)
+        //     console.log(event.button);
+        // })
+
+
+        // *******************Event delegates*****************
+            let parentbtn = document.querySelector(".btnparent");
+            parentbtn.addEventListener("click",(event)=>{// event tells if the event click occurs then the listner arrow function executes
+                let btntext = event.target.innerText;// this event.target gives the target element if the event occur and here extract the innertext of the target
+                if(btntext === "Stop"){// if the innertext is "Stop" 
+                    event.target.classList.toggle("btn-red");// apply the css class btn-red to it in toggle mode
+                }
+            })
     </script>
 </body>
 </html>
