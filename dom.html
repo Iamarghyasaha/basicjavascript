@@ -54,11 +54,11 @@
         </div>
     <script>
         // those dom selector should be always written in top:
-        let start = document.getElementById("stratbtn");// to access the Start button
-        let pause = document.querySelector(".pausebtn");// to access the Pause button
-        let stopb = document.querySelector("#stopbtn");// to access the Stop button
-        let all = document.querySelectorAll(".btn"); // select all button togather by same class, it will give an array of buttons
-        let input = document.querySelector(".input")// select input class by dom selector
+        // let start = document.getElementById("stratbtn");// to access the Start button
+        // let pause = document.querySelector(".pausebtn");// to access the Pause button
+        // let stopb = document.querySelector("#stopbtn");// to access the Stop button
+        // let all = document.querySelectorAll(".btn"); // select all button togather by same class, it will give an array of buttons
+        // let input = document.querySelector(".input")// select input class by dom selector
 
         // start.addEventListener("click",()=>{
         //     start.innerText = "Hello!";
@@ -87,13 +87,17 @@
 
 
         // *******************Event delegates*****************
-            let parentbtn = document.querySelector(".btnparent");
-            parentbtn.addEventListener("click",(event)=>{// event tells if the event click occurs then the listner arrow function executes
-                let btntext = event.target.innerText;// this event.target gives the target element if the event occur and here extract the innertext of the target
-                if(btntext === "Stop"){// if the innertext is "Stop" 
-                    event.target.classList.toggle("btn-red");// apply the css class btn-red to it in toggle mode
-                }
-            })
+
+        //Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.This event bubbling is connected to event delegation, when we need to perform same event with multiple element. Then without applying the eventlistner multiple time, we create eventlistner with the parent tag.
+
+            // let parentbtn = document.querySelector(".btnparent");
+            // parentbtn.addEventListener("click",(event)=>{// event tells if the event click occurs then the listner arrow function executes
+            //     let btntext = event.target.innerText;// this event.target gives the target element if the event occur and here extract the innertext of the target
+            //     if(btntext === "Stop"){// if the innertext is "Stop" 
+            //         event.target.classList.toggle("btn-red");// apply the css class btn-red to it in toggle mode
+            //     }
+            // })
+        // **********************Creating Html with javascript*****************    
     </script>
 </body>
 </html>
