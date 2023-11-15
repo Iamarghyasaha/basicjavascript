@@ -1399,4 +1399,71 @@
 // console.log(encodedstr);
 //
 //---------------------------------------DOM-------------------------------------
+// see dom.html
 
+//------------------------------------Class--------------------------------------
+//-------------------------------------Prototype------------------------------------
+// Prototype: Every object in Javascript has a hidden property called "Prototype". 
+// The value of this property can be null or a reference to another object. 
+// Every subject can have only one prototype
+// const user = {
+//     username : "Arghya",
+//     age : 23
+// }
+// console.log(user);
+// output in browser console: when a object logged a  hidden property called which is another object . This properthy contain many functions, subproperties and sub-objects, so, when we call toString(), valueOf() with this "User" object it returns [object Object] because of the hidden poperty Prototype.
+// age: 23
+// name: "arghya"
+// [[Prototype]]: Object
+// console.log(user.toString()); // [object Object]
+
+//********create custom prototype******/
+
+// const admin = {
+//     isAdmin : true
+// };
+// const user = {
+//     username : "Arghya",
+//     age : 23,
+//     __proto__: admin // "__proto__" is reserved keyword to declare a prototype it will not show in console it will show under hidden property prototype as nested property
+// }
+// console.log(user);
+// o/p:
+//{username: 'Arghya', age: 23}
+// age: 23
+// username: "Arghya"
+// [[Prototype]]: Object
+//      isAdmin: true //(in nested manner)
+
+// console.log(user.isAdmin);// true // user doesn't contain isAdmin property although it's returning "true" because user have the prototype which is refering to the object admin.
+
+//************Chaining of prototype*******************/
+// const loggedinstatus ={
+//     isLoggedin: true
+// };
+// const admin = {
+//     isAdmin : true,
+//     __proto__: loggedinstatus // prototype loggedinstatus is craeted
+//     showmsg(){
+//        console.log("User is loggedin")
+//  }
+// };
+// const user = {
+//     username : "Arghya",
+//     age : 23,
+//     __proto__: admin 
+// };
+// console.log(user);
+// user.showmsg(); // showmsg is not user's function although we can access this with user because it has prototype admin access
+// console.log(user.isAdmin); //true
+// console.log(user.isLoggedin);// true :user doesn't contain isLoggedin property although it's returning "true" because user have the prototype of  admin and admin have the prototype of loggedinstatus. This called Chaining of prototype.
+// Every subject can have only one prototype
+// we can't do this--->(two prototype can't be assigned in a singel object, for this we have to do chaining of prototype)
+// const user = {
+//     username : "Arghya",
+//     age : 23,
+//     __proto__: admin,
+//     __proto__: loggedinstatus
+// };
+// Object.keys(User)--> only return the keys only in the object not in the [prototype];
+// to access the all the keys and the prototype keys we use (for let in) 
