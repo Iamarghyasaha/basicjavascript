@@ -1563,9 +1563,26 @@
 // const child1 = new Children("prakash", 11);
 // const child2 = new Children("ashish", 19);
 // const child3 = new Children("riya", 9);
-
 // let arr = [child1, child2, child3];
 // console.log(arr.sort(Children.sortByAge));
+
+// // Another Example of static property
+// class User{
+//     static count =0;
+//     constructor(name){
+//         this.name=name;
+//         User.count++; // not assiged to any this.count // this.count=User.count++; then as per object declaration id will increase 0 to N
+//     }
+// }
+// const user1 = new User("Arghya");
+// const user2 = new User("rahul");
+// const user3  = new User("Aslcma");
+// console.log(user1.count);// undefined
+// console.log(User.count);// 3
+// console.log(user2.count);// undefined
+// console.log(User.count);// 3
+// console.log(user3.count);// undefined
+// console.log(User.count);//3
 
 //----------------------------------------Private Properties--------------------------------------------
 // Private Properties: Private properties refers to class properties that are only accessible within the class itself and cannot be accessed or modified from outside the class. 
@@ -1578,19 +1595,50 @@
 // console.log(user);
 
 // In the above code, a User class is defined with a class field "id" that is initialized to 123. Then, an instance of the User class is created and stored in the "user" variable using the "new" keyword.After creating the instance, the code attempts to modify the "id" property of the user object by setting it to 321. When the user object is logged to the console, it will show the "id" property with the value 321.
-class User {
-    #id = 123;
-    changeId(id){
-        this.id = id;
-    }
-  }
-  const user1 = new User();
-  //user.#id = 321; // error in this line saying private property is not accessible outside class
-  console.log(user1.id); // undefined: we are not even able to  access the private propeerty by object
-  console.log(User.id); //undefined
-  user1.changeId(321); // now with method  id is changed and now accessible to all;
-  console.log(user1.id);// 321
-  user1.id = 456; // now after calling the changeId, this id assignment is also possible. priviously which was disabled.
-  console.log(user1.id); // 456
+// class User {
+//     #id = 123;
+//     changeId(id){
+//         this.id = id;
+//     }
+//   }
+//   const user1 = new User();
+//   //user.#id = 321; // error in this line saying private property is not accessible outside class
+//   console.log(user1.id); // undefined: we are not even able to  access the private propeerty by object
+//   console.log(User.id); //undefined
+//   user1.changeId(321); // now with method  id is changed and now accessible to all;
+//   console.log(user1.id);// 321
+//   user1.id = 456; // now after calling the changeId, this id assignment is also possible. priviously which was disabled.
+//   console.log(user1.id); // 456
 
   //The code defines a User class with a private instance variable, #id, initialized to 123 in the class definition. Subsequently, a new instance of the class is created and assigned to the user variable. However, attempting to directly modify the #id private property using the syntax user. #id = 321; results in a syntax error since Private Properties are not accessible from outside the class.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
