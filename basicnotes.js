@@ -1493,3 +1493,104 @@
 // user3.displayinfo();// Rahul is 22 years old
 
 //------------------------------inheritance--------------------------------
+// Inheritance refers to the ability of a child class to inherit properties and methods from its parent class.
+
+// parent class
+// class Laptop {
+//     constructor(ram, processor, generation) {
+//       this.ram = ram;
+//       this.processor = processor;
+//       this.generation = generation;
+//     }
+//     displayMessage() {
+//       console.log(`Laptop Spec:: RAM ${this.ram} - Processor ${this.processor} ${this.generation} Gen`);
+//     }
+//   }
+  
+  //child class
+//   class Dell extends Laptop { // through extends keyword we can inherit from a parent class
+//     constructor(ram, processor, generation,modelname,price) {
+//       super(ram, processor, generation);// The super keyword is used to call the constructor of its parent class to access the parent's properties and methods.
+//       this.modelname = modelname;// we are adding more properties to the child extending the parent class
+//       this.price=price;
+//     }
+//     displayMessage(){// this is method overriding
+//         console.log(`Laptop Spec:: RAM ${this.ram} - Processor ${this.processor} ${this.generation} Gen ${this.modelname} ${this.price} Rs`);
+//     }
+//   }
+  
+//   const dell1 = new Dell("8GB", "Intel", "15","datu08X",100000);
+//   console.log(dell1);
+//   dell1.displayMessage(); // Laptop Spec:: RAM 8GB - Processor Intel 15 Gen undefined 100000 Rs
+
+//-------------------------Static method and  Static properties ------------------------
+// Static Method: Methods that are created inside a class, but the method as a whole is available to all objects of that class. For example, we can use Static Methods for sorting an employee database according to the performance of employees.
+
+// class Children {
+//     constructor(name, age) {
+//       this.name = name;
+//       this.age = age;
+//     }
+//     static sortByAge(a, b) {
+//       return a.age - b.age;
+//     }
+//   }
+  
+//   const child1 = new Children("prakash", 11);
+//   const child2 = new Children("ashish", 19);
+//   const child3 = new Children("riya", 9);
+//   let arr = [child1, child2, child3];
+//   console.log(arr.sort(Children.sortByAge));
+//  O/P: [
+//   Children { name: 'riya', age: 9 },
+//   Children { name: 'prakash', age: 11 },
+//   Children { name: 'ashish', age: 19 }
+// ]
+
+//Static Property: These static properties are defined using static keyword.
+// class Children {
+//     static id = 1; // Declare a static property to keep track of IDs
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//         this.id = Children.id++; // Assign a unique ID to each child
+//     }
+//     static sortByAge(a, b) {
+//         return a.age - b.age;
+//     }
+// }
+
+// const child1 = new Children("prakash", 11);
+// const child2 = new Children("ashish", 19);
+// const child3 = new Children("riya", 9);
+
+// let arr = [child1, child2, child3];
+// console.log(arr.sort(Children.sortByAge));
+
+//----------------------------------------Private Properties--------------------------------------------
+// Private Properties: Private properties refers to class properties that are only accessible within the class itself and cannot be accessed or modified from outside the class. 
+
+// class User {
+//     id =123;
+// }
+// const user = new User();
+// user.id = 321;
+// console.log(user);
+
+// In the above code, a User class is defined with a class field "id" that is initialized to 123. Then, an instance of the User class is created and stored in the "user" variable using the "new" keyword.After creating the instance, the code attempts to modify the "id" property of the user object by setting it to 321. When the user object is logged to the console, it will show the "id" property with the value 321.
+class User {
+    #id = 123;
+    changeId(id){
+        this.id = id;
+    }
+  }
+  const user1 = new User();
+  //user.#id = 321; // error in this line saying private property is not accessible outside class
+  console.log(user1.id); // undefined: we are not even able to  access the private propeerty by object
+  console.log(User.id); //undefined
+  user1.changeId(321); // now with method  id is changed and now accessible to all;
+  console.log(user1.id);// 321
+  user1.id = 456; // now after calling the changeId, this id assignment is also possible. priviously which was disabled.
+  console.log(user1.id); // 456
+
+  //The code defines a User class with a private instance variable, #id, initialized to 123 in the class definition. Subsequently, a new instance of the class is created and assigned to the user variable. However, attempting to directly modify the #id private property using the syntax user. #id = 321; results in a syntax error since Private Properties are not accessible from outside the class.
