@@ -1401,7 +1401,8 @@
 //---------------------------------------DOM-------------------------------------
 // see dom.html
 
-//------------------------------------Class--------------------------------------
+//---------------------------------------------------------------Class-------------------------------------------------------------
+
 //-------------------------------------Prototype------------------------------------
 // Prototype: Every object in Javascript has a hidden property called "Prototype". 
 // The value of this property can be null or a reference to another object. 
@@ -1467,3 +1468,28 @@
 // };
 // Object.keys(User)--> only return the keys only in the object not in the [prototype];
 // to access the all the keys and the prototype keys we use (for let in) 
+
+//----------------------------Class------------------------------------------
+//A Class serves as a blueprint for creating multiple objects with similar properties and methods. One real-life example of a class is the Car class. This class defines the blueprint for creating car objects, including properties such as make, model, year, color, and price, and methods for performing actions like starting the engine, accelerating, braking, and turning.
+
+// class User{
+//     constructor(name,age){
+//         this.name=name;
+//         this.age=age;
+//     }
+//     // Method in class--> it should be outside tof the constructor
+//     displayinfo(){
+//         console.log(`${this.name} is ${this.age} years old`);
+//     }
+// }
+// const user1 = new User("Arghya",23);
+// const user2 = new User("Raman",24,55);
+// const user3 = new User("Rahul",22);
+// console.log(user1);// User { name: 'Arghya', age: 23 }
+// console.log(user1.name);// Arghya
+// console.log(user2);// User { name: 'Raman', age: 24 } it will ignore another parameter 55 which is not mentioned in the constructor
+// // Calling method of a class
+// // if we console.log the object we can only see the properties as in the constructor of the class mentioned but we can't find the method. so where it's storing? actually it's storing inside the hidden prototype
+// user3.displayinfo();// Rahul is 22 years old
+
+//------------------------------inheritance--------------------------------
