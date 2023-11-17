@@ -1655,17 +1655,74 @@
 // let's begin
 // Bye bye
 // Wait fot 4 sec
-// this is the beauty of async js the execution will not wait for the timer API to execute the callback function then go to another line and in back browser starts 4000ms timer. Instead of the js engine execute the next line and after 4 sec the callback function goes to the call stack and execute.
+
+// this is the beauty of async js the execution will not wait for the timer API to execute the callback function then go to another line and in back browser starts 4000ms timer. Instead of the js engine execute the next line and after 4 sec the callback function goes to the call stack and execute. But the callback function will not directly go to the call stack. In between there is Event Loop and callback Queue. Actualluy after The timer api expires then the callback function pushes to the callback Queue. The job of the event loop is continuously keep on monitoring the call stack and the callback queue, the call stack is empty or not then push the callback function to the call stack to execute.
+
 // how it is possible to execution the callback after 4 sec? --> actually there is a concept called Event loop inside the browser 
 // Event Loop is the heart of the async js is this event loop
 
 // Event Loop: In JavaScript, an event loop is a mechanism that enables asynchronous programming. The event loop works by continuously processing a queue of events and executing any associated callbacks or functions.
 
 // Callback Queue: In JavaScript, the callback queue is a mechanism used by the event loop to manage asynchronous code execution. Whenever an asynchronous operation is performed, such as a timer set by setTimeout() or an HTTP request made by fetch(), the associated callback function is added to the callback queue.The event loop constantly monitors the callback queue and executes the callbacks in the order in which they were added, one at a time. This ensures that the JavaScript runtime remains single-threaded and that no two callbacks are executed simultaneously.
+// 2 types of call back queue 1. Task Callback Queue-->Least Priority Task 2.Micro Task Callback Queue-->high Priority task
 
+// console.log("lets Start");   // line1
+// const btnAddtoCart = document.getElementById("btn");  //line2
+// btnAddtoCart.addEventListener("click",()=> {     //line3
+//   console.log("Button Clicked");
+// });
+// console.log("Bye Bye ......");
 
+// Initially, the line1 console.log("Let Start") is printed then js engine moves to the next line and extracts the node from the DOM and saves its reference in a variable called btnAddtoCart.Then as soon it encounters line 3, event listener is registered in the web-API and the js engine moves forward and prints the last line console.log("Bye Bye ").Once a user clicks on the button to which the event listener is attached, the callback is pushed into the callback queue, and once the event loop finds the call stack as empty callback queue pushes the callback function into the call stack, and the function gets executed.
 
+//-------------------------------------------------------------------------------------------------------------------------------------------
 
+//callback hell: In JavaScript, the scenario where the code becomes densely nested and challenging to read due to the overuse of callbacks is referred to as "callback hell."
+//This bellow senario is called callback hell:
+// bookHotel(hotelId,function(){
+//   if(err){
+//       errorHandler();
+//    }else{
+//       proceedToPayment(hotelId,function(){
+//          if(err){
+//            erroHandler();
+//          }else{
+//            showBookingStatus(hotelId,function(){
+//               if(err){
+//                 errorHandler();
+//               }else{
+//                 updateBookingHistroy(hotelId,function(){
+//                   success();
+//                 })
+//                }
+//            })
+//           }
+//       })
+//     }
+// })
+//  If you take a look at the above code it is clear that our code is expanding in the horizontal direction instead of the vertical direction which is considered a bad practice in programming as it makes the code less readable and difficult to identify bugs as well.
+//  In order to resolve these issues we use promises and the async-await style of async programming.
+
+//------------------------------------------------Promise-------------------------------------------------
+
+// Promise: Promise is an object that has the status of an async operation, and it's corresponding value.
+
+// const URL = "https://goweather.herokuapp.com/weather/Ny";
+// let promise = fetch(URL);
+// promise.then((response)=>{
+//   return response.json();
+// }).then((data)=>{  // this .then and .catch is called "Method Chaining" 
+//   console.log(data);
+//   console.log(data.forecast.find(value=>{
+//     return value.day==1
+//   }))
+//   // if(data.temperature ==="+22 °C"){
+//   //   console.log(data);
+//   // }
+// }).catch((error)=>{// if the promise resolved .then comes to action is the promise rejeccted .catch comes to the picture
+//   console.log(error);
+//   console.log("Error Occoured");
+// })
 
 
 
