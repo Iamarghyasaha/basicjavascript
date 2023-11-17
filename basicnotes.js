@@ -1609,21 +1609,59 @@
 //   console.log(user1.id);// 321
 //   user1.id = 456; // now after calling the changeId, this id assignment is also possible. priviously which was disabled.
 //   console.log(user1.id); // 456
-
-  //The code defines a User class with a private instance variable, #id, initialized to 123 in the class definition. Subsequently, a new instance of the class is created and assigned to the user variable. However, attempting to directly modify the #id private property using the syntax user. #id = 321; results in a syntax error since Private Properties are not accessible from outside the class.
-
+//The code defines a User class with a private instance variable, #id, initialized to 123 in the class definition. Subsequently, a new instance of the class is created and assigned to the user variable. However, attempting to directly modify the #id private property using the syntax user. #id = 321; results in a syntax error since Private Properties are not accessible from outside the class.
 
 
+//------------------------------------------------ Asynchronous JavaScript-----------------------------------------------------
+
+//-------------------CallBack Function--------------------
 
 
+// Callback FUnction: A callback function is a function that is passed as an argument to another function and is invoked or called by that function at a certain point in time.
+
+// function a(wrapper){ // a function is passed as an aurgument to another function can be called as wrapper function
+//   console.log("Main Function");
+//   wrapper();// callback function called 
+// }
+// function b(){
+//   console.log("Wrapper Function");
+// }
+// a(b);
+
+// real time use of callback function
+
+// setTimeout(function callback(){ // setTImeout : is a async function in js, used to delay some action.
+// console.log("this is a call back function executed after 4 sec");// callback function will executed after 4 sec
+// },4000)
+
+// another example with fetch
+// fetch('https://jsonplaceholder.typicode.com/posts/1')// after fetching this
+//   .then(response => response.json()) // then give the response 
+//   .catch(error => console.error(error));
+
+//Here we are making a network call to fetch some data from the JSON placeholder and we are waiting for the response to come back, once we receive the response our callback function is executed which is passed as an argument to the then method. In case Our response fails, our callback function for the catch method is called.
 
 
+//----------------------------------------------How asyncronise JS works------------------------------------------------
 
+//Async programming is a programming model that allows code to run asynchronously or non-blocking. This means that while a task is being executed, other code can continue to run concurrently without waiting for the task to complete.
 
+// console.log("let's begin");
+// setTimeout(()=>{
+//   console.log("Wait fot 4 sec");
+// },4000)
+// console.log("Bye bye");
+//O/P:
+// let's begin
+// Bye bye
+// Wait fot 4 sec
+// this is the beauty of async js the execution will not wait for the timer API to execute the callback function then go to another line and in back browser starts 4000ms timer. Instead of the js engine execute the next line and after 4 sec the callback function goes to the call stack and execute.
+// how it is possible to execution the callback after 4 sec? --> actually there is a concept called Event loop inside the browser 
+// Event Loop is the heart of the async js is this event loop
 
+// Event Loop: In JavaScript, an event loop is a mechanism that enables asynchronous programming. The event loop works by continuously processing a queue of events and executing any associated callbacks or functions.
 
-
-
+// Callback Queue: In JavaScript, the callback queue is a mechanism used by the event loop to manage asynchronous code execution. Whenever an asynchronous operation is performed, such as a timer set by setTimeout() or an HTTP request made by fetch(), the associated callback function is added to the callback queue.The event loop constantly monitors the callback queue and executes the callbacks in the order in which they were added, one at a time. This ensures that the JavaScript runtime remains single-threaded and that no two callbacks are executed simultaneously.
 
 
 
