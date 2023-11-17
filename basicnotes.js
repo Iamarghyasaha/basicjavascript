@@ -1707,11 +1707,16 @@
 
 // Promise: Promise is an object that has the status of an async operation, and it's corresponding value.
 
+// either a promise can be resolved or it can be rejected (At first it will be in Pending status)
+
+//A promise in JavaScript represents the eventual outcome of an asynchronous operation and its value, whether successful or failed. Promises are commonly used to handle various asynchronous tasks such as fetching data from an API, reading files, or waiting for a timer to expire.Consider Promise as a special Object in Javascript which has different states and corresponding different values of each state.A promise is initially in a pending state and changes to either a "Fulfilled" or "rejected" state depending on whether the promise was resolved or rejected. Initially, the value of the promise is undefined and changes to the value of the resolve(value) method if the promise is successful or changes to an error in case the reject(error) method is called.
+
+
 // const URL = "https://goweather.herokuapp.com/weather/Ny";
 // let promise = fetch(URL);
 // promise.then((response)=>{
-//   return response.json();
-// }).then((data)=>{  // this .then and .catch is called "Method Chaining" 
+//   return response.json();// converting the response to the json format
+// }).then((data)=>{  // this .then and .catch is called "Method  Chaining" // We can chain promises and make themm pass the resolved value to one another
 //   console.log(data);
 //   console.log(data.forecast.find(value=>{
 //     return value.day==1
@@ -1719,21 +1724,66 @@
 //   // if(data.temperature ==="+22 °C"){
 //   //   console.log(data);
 //   // }
-// }).catch((error)=>{// if the promise resolved .then comes to action is the promise rejeccted .catch comes to the picture
+// }).catch((error)=>{// if the promise resolved (.then) comes to action is the promise rejeccted (.catch) comes to the picture. every (.then) is returning a promise
 //   console.log(error);
 //   console.log("Error Occoured");
 // })
 
+// ---------------------------All about Promise:-------------------
+// Custom Promise
+
+// const isReqsuccessful = true; // make false to see the error
+// let promise = new Promise((resolve,reject)=>{   // resolve and reject are callback function are provided by js itself
+//   if(isReqsuccessful){
+//     resolve("Request Resolved");// to fullfill  the status of the promise, either we have to resolve(value) with some value it can be string/object anything or reject() will throw an error
+//                                   //this resolve(value) we will see in promise.then(response)
+//   }
+//   else{
+//     const error = new Error("Somethig Error;");
+//     reject(error.message);
+//   }
+// })
+// console.log(promise);// Promise { 'Request Resolved' }
+// promise.then((response)=> console.log(response));// Request Resolved
+
+//------------------------ Promise with Custom DB-----------------------
+
+// const db =[
+//   {id : 1, name: "Arghya"},
+//   {id : 2, name: "Arun"}
+// ]
+// let promise = new Promise((resolve,reject)=>{
+//   console.log("Resolved");
+//   resolve(db);
+
+// })
+// promise
+//   .then((response)=>console.log(response))// .then *response* is for resolved
+//   .catch((err)=>console.log(err.message));
+
+// Simple Understanding of promise: 
 
 
+// let pro1 = new Promise((resolve,reject)=>{ // resolve and reject are callback function are provided by js itself
+//   console.log("Completed")
+//   setTimeout(()=>{
+//     resolve("resolved promise")
+//   },4000)
+// })
+// let pro2 = new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     reject(new Error("Error occured"))// new Error created, it will occur if we catch the error of this promise as there is no resolve callback function
+//   },4000)
+// })
 
-
-
-
-
-
-
-
-
-
-
+// pro1.then((response)=>{ // this response is coming from the resolve--> the value inside resolve is pass to the response
+//   console.log(response);
+// })
+// pro2.catch((err)=>{// this err is coming from the reject
+//   console.log(err.message);
+// })
+//O/P:
+// Completed
+// Completed
+// resolved promise
+// Error occured
