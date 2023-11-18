@@ -1636,7 +1636,7 @@
 
 // another example with fetch
 // fetch('https://jsonplaceholder.typicode.com/posts/1')// after fetching this
-//   .then(response => response.json()) // then give the response 
+//   .then(response => response.json()) // then give the response into json format
 //   .catch(error => console.error(error));
 
 //Here we are making a network call to fetch some data from the JSON placeholder and we are waiting for the response to come back, once we receive the response our callback function is executed which is passed as an argument to the then method. In case Our response fails, our callback function for the catch method is called.
@@ -1664,7 +1664,9 @@
 // Event Loop: In JavaScript, an event loop is a mechanism that enables asynchronous programming. The event loop works by continuously processing a queue of events and executing any associated callbacks or functions.
 
 // Callback Queue: In JavaScript, the callback queue is a mechanism used by the event loop to manage asynchronous code execution. Whenever an asynchronous operation is performed, such as a timer set by setTimeout() or an HTTP request made by fetch(), the associated callback function is added to the callback queue.The event loop constantly monitors the callback queue and executes the callbacks in the order in which they were added, one at a time. This ensures that the JavaScript runtime remains single-threaded and that no two callbacks are executed simultaneously.
-// 2 types of call back queue 1. Task Callback Queue-->Least Priority Task 2.Micro Task Callback Queue-->high Priority task
+// 2 types of call back queue 
+// 1. Task Callback Queue-->Least Priority Task ---> here the callback function of the setTimeout(), Dom Apis
+// 2.Micro Task Callback Queue-->high Priority task--> the callback function of the promise should be in this and fetch() is also consider but after promise
 
 // console.log("lets Start");   // line1
 // const btnAddtoCart = document.getElementById("btn");  //line2
@@ -1787,3 +1789,116 @@
 // Completed
 // resolved promise
 // Error occured
+
+
+//Check every steps here of event listners,call stack, task callback queue, microtask call back queue--> https://www.jsv9000.app/
+
+// let p1 = new Promise((resolve,reject)=>{
+//   setTimeout(()=>{  // set timeout is a task callback queue,it's executing third because of setTimeout set on 2000ms but it's the oldest in the task callback queue
+//     console.log("Inside promise P1");
+//   },2000)
+// })
+
+// let p2 = new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     console.log("Inside promise P2"); // set timeout is a task callback queue,but it's executing forth because of setTimeout set on 2000ms but it's not the oldest in the task callback queue, oldest one is p1
+//   },2000)
+// })
+// let p3 = new Promise((resolve,reject)=>{
+//   setTimeout(()=>{  // set timeout is a task callback queue, but it's executing second because of setTimeout set on 1000ms
+//     console.log("Inside promise P3");
+//   },1000)
+// })
+// let p4 = new Promise((resolve,reject)=>{
+//   resolve("Inside promise P4");
+// }).then((response)=>console.log(response))// promise.then is a Micro task callback queue, so it's executing fast
+
+
+//O/P:
+// Inside promise P4
+// Inside promise P3
+// Inside promise P1
+// Inside promise P2
+
+
+//-----------------------------------Attaching Multiple Handelers to a promise------------------------------
+// it is different than promise chaining method, because in promise chaining one then returns a value, that uses in the next cahining
+// but Attaching Multiple Handelers it don't uses previous returned value
+
+// p1.then()---->this called handelers
+// p1.then()---->this called handelers
+
+// when we use multiple handelers with same promise it's called Attaching Multiple Handelers actully we attach multiple (p1.then)
+
+// Example: 
+
+// let p1 = new Promise((resolve,reject)=>{
+//   setTimeout(()=>{
+//     resolve(2)
+//   },2000)
+// }).then((response)=>console.log(response));// 2
+// p1.then(()=>console.log("Promise is resolved"));
+// p1.then((response)=>{
+//   console.log("Hurry!!")
+//    return new Promise((resolve,reject)=>{// promise returning a new promise and the resolved value change
+//     setTimeout(()=>{
+//       resolve(4);
+//     },4000)
+//   })
+// }).then((response)=>console.log(response));//  4
+
+// Promise is resolved
+// Hurry!!
+// 4
+
+//------------------------------------Promise Api Methods----------------------------------
+// There are 6 static methods of Promise class
+
+//  Promise.All([arrayofPromise])
+//  https://api.github.com/users/prakashsakari
+//  Promise.all: takes array of promises
+//  Promise.all():  to execute multiple promises in parallel and wait until all of them are ready. 
+//  Promise.all(): either resoved the array of resolved value or the latest error
+//  if we use setTimeout with different timeout also it will resolve wait until all of them are ready
+
+// let promise1 = new Promise((resolve)=>{// we haven't handeled reject here
+//   resolve("Promise1 resolved")
+// })
+// let promise2 = new Promise((resolve)=>{
+//   resolve("Promise2 resolved")
+// })
+// let promise3 = new Promise((resolve)=>{
+//   resolve("Promise3 resolved")
+// })
+// // if we want to execute all promise in a single execution, execute multiple promises in parallel and wait until all of them are ready. 
+// promise1.then((response)=>console.log(response));
+// promise2.then((response)=>console.log(response));
+// promise3.then((response)=>console.log(response));
+//O/P:
+// Promise1 resolved
+// Promise2 resolved
+// Promise3 resolved
+// instead of the upper code we can :
+// let arrofpromises = [promise1,promise2,promise3];
+// let p = Promise.all(arrofpromises);
+// p.then((response)=>console.log(response));
+//O/P:(returns array response of resolved promises)
+//[ 'Promise1 resolved', 'Promise2 resolved', 'Promise3 resolved' ]
+
+
+// Promise.all()---> if error occurs
+let promise1 = new Promise((resolve,reject)=>{// we haven't handeled reject here
+  resolve("Promise1 resolved")
+})
+let promise2 = new Promise((resolve,reject)=>{
+  reject("Promise2 resolved")
+})
+let promise3 = new Promise((resolve,reject)=>{
+  reject("Promise3 resolved")
+})
+
+
+
+
+
+
