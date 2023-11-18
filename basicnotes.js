@@ -1763,7 +1763,7 @@
 //   .then((response)=>console.log(response))// .then *response* is for resolved
 //   .catch((err)=>console.log(err.message));
 
-// Simple Understanding of promise: 
+// ************************Simple Understanding of promise: ***************************
 
 
 // let pro1 = new Promise((resolve,reject)=>{ // resolve and reject are callback function are provided by js itself
@@ -1856,6 +1856,7 @@
 
 //  Promise.All([arrayofPromise])
 //  https://api.github.com/users/prakashsakari
+//  https://api.github.com/users/AshishJangra27
 //  Promise.all: takes array of promises
 //  Promise.all():  to execute multiple promises in parallel and wait until all of them are ready. 
 //  Promise.all(): either resoved the array of resolved value or the latest error
@@ -1886,19 +1887,69 @@
 //[ 'Promise1 resolved', 'Promise2 resolved', 'Promise3 resolved' ]
 
 
-// Promise.all()---> if error occurs
-let promise1 = new Promise((resolve,reject)=>{// we haven't handeled reject here
-  resolve("Promise1 resolved")
-})
-let promise2 = new Promise((resolve,reject)=>{
-  reject("Promise2 resolved")
-})
-let promise3 = new Promise((resolve,reject)=>{
-  reject("Promise3 resolved")
-})
+// ***********************Promise.all()---> if error occurs********************
+// let promise1 = new Promise((resolve,reject)=>{// we haven't handeled reject here
+//   resolve("Promise1 resolved")
+// })
+// let promise2 = new Promise((resolve,reject)=>{
+//   reject("Promise2 rejected")
+// })
+// let promise3 = new Promise((resolve,reject)=>{
+//   reject("Promise3 rejected")
+// })
+
+// let p = Promise.all([promise1,promise2,promise3]);
+
+// p.then((response)=>console.log(response)).catch((err)=>console.log(err)); // O/p: "Promise2 rejected"
+
+// it will return the value of the recent error which occur
+// if we use setTimeout() then the fastest resolved rejected error will be the output
+// setTimeout(()=>{reject("Promise2 rejected"),2000})
 
 
+//*******************************************Fetch()************************************
 
+//  https://api.github.com/users/prakashsakari
+//  https://api.github.com/users/AshishJangra27
 
+// let users = ["prakashsakari","AshishJangra27"];
+// let arrofpromises = users.map((user)=>
+//   fetch(`https://api.github.com/users/${user}`)
+// );
+// let promise = Promise.all(arrofpromises);
+// promise.then((response)=>{
+//   response.forEach((data)=>{
+//     //console.log(data)
+//     console.log(data.url)
+// })
+// }).catch((err)=>{
+//   console.log(err)
+// })
+//-------------------------------------------------------------------------
+
+// **********************Promise.allSetteled()*****************************
+
+// in Promise.all()--> if any promise rejected , it only show the latest rejected error
+// to overcome this we use Promise.allSetteled()
+
+// let promise1 = new Promise((resolve,reject)=>resolve("Promise1 resolved"))
+// let promise2 = new Promise((resolve,reject)=>reject("Promise2 rejected"))
+// let promise3 = new Promise((resolve,reject)=>reject("Promise3 rejected"))
+// let p = Promise.allSettled([promise1,promise2,promise3]);
+// p.then((response)=>console.log(response)).catch((err)=>console.log(err));
+// O/P:
+// [
+//   { status: 'fulfilled', value: 'Promise1 resolved' },
+//   { status: 'rejected', reason: 'Promise2 rejected' },
+//   { status: 'rejected', reason: 'Promise3 rejected' }
+// ]
+//p.then((response)=>response.forEach((data)=>console.log(data))).catch((err)=>console.log(err)); // this for each will print every promise data as individual object
+// O/P:
+// { status: 'fulfilled', value: 'Promise1 resolved' }
+// { status: 'rejected', reason: 'Promise2 rejected' }
+// { status: 'rejected', reason: 'Promise3 rejected' }
+ 
+
+//Promise.race() vs Promise.any
 
 
