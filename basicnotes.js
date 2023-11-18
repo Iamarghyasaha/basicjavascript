@@ -1953,21 +1953,30 @@
 //**************************Promise.race() vs Promise.any****************************8
 
 // Promise.race(): This function is like Promise.all, but instead of waiting for all promises to settle, it only waits for the first one to settle and retrieves its result or error.
-// the fastest one will it retrives: 
-// priority will be given to the resolved one.
+// the fastest one will it retrives: whearther is is resolved or rejected
 // if no promise resolved then the fastest reject will be 
 
 
 // let promise1 = new Promise((resolve,reject)=>reject("Promise1 rejected"))
 // let promise2 = new Promise((resolve,reject)=>reject("Promise2 rejected"))
-// let promise3 = new Promise((resolve,reject)=>reject("Promise3 rejected"))
+// let promise3 = new Promise((resolve,reject)=>resolve("Promise3 rejected"))
 // let promiserace = Promise.race([promise1,promise2,promise3]);
 // promiserace.then((reponse)=>console.log(reponse)).catch((err)=>console.log(err)); // Promise1 rejected
 
 // Promise.any(): Although the initial promise was the quickest, it was rejected, and as a result, the second promise became the outcome. Once the first promise that was fulfilled wins the race, any additional outcomes are disregarded.
+// promise.any() retrive fastest resolved one not the rejected one
+// if every promise gets rejected then promise.any() will throw error
 
-let promise1 = new Promise((resolve,reject)=>reject("Promise1 rejected"))
-let promise2 = new Promise((resolve,reject)=>resolve("Promise2 resolved"))
-let promise3 = new Promise((resolve,reject)=>reject("Promise3 rejected"))
-let promiseany = Promise.any([promise1,promise2,promise3]);
-promiseany.then((reponse)=>console.log(reponse)).catch((err)=>console.log(err)); //Promise2 resolved
+// let promise4 = new Promise((resolve,reject)=>reject("Promise1 rejected"))
+// let promise5 = new Promise((resolve,resolved)=>reject("Promise2 resolved"))
+// let promise6 = new Promise((resolve,reject)=>reject("Promise3 rejected"))
+// let promiseany = Promise.any([promise4,promise5,promise6]);
+// promiseany.then((reponse)=>console.log(reponse)).catch((err)=>console.log(err)); //Promise2 resolved
+
+// What is the difference between Promise.any and promise.race ?
+
+// Here's an example: imagine you have three promises that represent different tasks you want to do simultaneously. Promise 1 represents checking your email, Promise 2 represents making a phone call, and Promise 3 represents sending a text message.
+
+// If you use Promise.race(), the method will return the result of the first promise that finishes, whether it was successful or not. So, if Promise 1 finishes first but it's a rejection (e.g., you couldn't log in to your email), the Promise.race() method will immediately return the rejection value without waiting for Promise 2 or Promise 3 to finish.
+
+// If you use Promise.any(), the method will return the first promise that finishes successfully (i.e., it gets resolved). So, if Promise 2 finishes first and it's successful (e.g., you finished your phone call), Promise. any() will return that result and Promise 1 and Promise 3 will stop executing. However, if none of the promises get resolved and they all reject, then Promise.any() will throw an error.
