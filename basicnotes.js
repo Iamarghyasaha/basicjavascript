@@ -1640,35 +1640,14 @@
 //
 //
 //
+// <script differ src="/basicnotes.js"></script>
 //
+// if script is written with differ the the html starts parsing and with this js fetched from the network. it waits till the html fully parsed then only js starts executing.
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+//                Html Parsing Start-End 
+//<------------------------------------------------------->    js starts executing->end
+//  <------------------------------>                       <------------------------------> 
+//    js downloading start-end  
 //
 //
 //
