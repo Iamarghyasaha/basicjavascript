@@ -1614,6 +1614,65 @@
 
 //------------------------------------------------ Asynchronous JavaScript-----------------------------------------------------
 
+//---------------------------------Async and Differ----------------------------
+
+// to run a website we considered: Html Parsing, js loading , js executing [css is not included]
+
+// <script src="/basicnotes.js"></script> -->general
+
+// if script is written like this that means at first html parsing is stared, then when it encountered script it paused the html parsing and started the script downloading and after the completataion of the downloading it instsantly start the execution, and after the execution complete it again continues the html parsing where it left previously. So, here js is blocking the rendering of the HTML. It is not a good practise.
+
+//
+//<--------------------------->    js downloading start-end    js execution  start-end      <---------------------------->
+//   Html Parsing start-pause <------------------------------><------------------------------> Html again start parting
+//
+//
+
+
+// <script async src="/basicnotes.js"></script>
+//
+//  if script is written like this then with html parsing script will start fetching asyncronously with the html parsing, as soon as the script fetched instantly then the script started executing and the html parsing pasused till the execution end after the execution end the html again starts parsing
+//
+//  Html Parsing start-pause
+//<--------------------------->  js execution  start-end   <---------------------------->
+//<---------------------------><---------------------------> Html again start parting
+//  js downloading start-end  
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 //-------------------CallBack Function--------------------
 
 
@@ -1980,3 +2039,97 @@
 // If you use Promise.race(), the method will return the result of the first promise that finishes, whether it was successful or not. So, if Promise 1 finishes first but it's a rejection (e.g., you couldn't log in to your email), the Promise.race() method will immediately return the rejection value without waiting for Promise 2 or Promise 3 to finish.
 
 // If you use Promise.any(), the method will return the first promise that finishes successfully (i.e., it gets resolved). So, if Promise 2 finishes first and it's successful (e.g., you finished your phone call), Promise. any() will return that result and Promise 1 and Promise 3 will stop executing. However, if none of the promises get resolved and they all reject, then Promise.any() will throw an error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
