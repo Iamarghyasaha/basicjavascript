@@ -1649,9 +1649,6 @@
 //  <------------------------------>                       <------------------------------> 
 //    js downloading start-end  
 //
-//
-//
-
 //-------------------CallBack Function--------------------
 
 
@@ -2006,7 +2003,7 @@
 // if every promise gets rejected then promise.any() will throw error
 
 // let promise4 = new Promise((resolve,reject)=>reject("Promise1 rejected"))
-// let promise5 = new Promise((resolve,resolved)=>reject("Promise2 resolved"))
+// let promise5 = new Promise((resolve,resolved)=>rejeB("Promise2 resolved"))
 // let promise6 = new Promise((resolve,reject)=>reject("Promise3 rejected"))
 // let promiseany = Promise.any([promise4,promise5,promise6]);
 // promiseany.then((reponse)=>console.log(reponse)).catch((err)=>console.log(err)); //Promise2 resolved
@@ -2019,7 +2016,34 @@
 
 // If you use Promise.any(), the method will return the first promise that finishes successfully (i.e., it gets resolved). So, if Promise 2 finishes first and it's successful (e.g., you finished your phone call), Promise. any() will return that result and Promise 1 and Promise 3 will stop executing. However, if none of the promises get resolved and they all reject, then Promise.any() will throw an error.
 
+//--------------------------------------Async and Wait---------------------------------------------
 
+// Async: Async simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event loop. 
+//async by default returns a fullfilled promise wheather it is a string number or a promise.
+
+// function returnsome1(){
+//   return "Prakash";
+// }
+// const value = returnsome1();
+// console.log(value); // Prakash
+
+// async function returnsome2(){
+//   return "sakari";
+// }
+// const value1 = returnsome2();
+// console.log(value1);// Promise { 'sakari' }--> returns promise when function is async
+
+// async function showasync(){
+//   const p1 = new Promise((resolve,reject)=>{
+//     resolve("done done");
+//   })
+//   return p1;
+// }
+// const promise = showasync();
+// console.log(promise);// Promise { <pending> }
+// promise.then((response)=>{console.log(response)});// done done
+
+//Await: Await function is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
 
 
 
