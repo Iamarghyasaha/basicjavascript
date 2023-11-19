@@ -1,23 +1,34 @@
+// ------------------------------Variable Initialization and errors -----------------------
 // const pname="";
-// pname="dkdk";--->error
+// pname="dkdk";//--->error
 // console.log(pname);
+
+// let a;
+// a=15;
+// console.log(a);---> 15
+
+// var a;
+// a=15;
+// console.log(a);// 15
 
 // const age = 18;
 // if(age>=18){
-
 //     const age=19;
 // }
 // else{
 //     const age=17
 // }
-// console.log(age);---> will not throw any error give output 18 because const's blocked scoped
+// console.log(age);//---> will not throw any error give output 18 because const's blocked scoped
 
 // let userName = "Rakesh";
 // console.log(typeof userName);---> give string
 // console.log(typeof "Arghya");--->give string
 
-// premitive datatype: here any variable assigned a singel value (Number,string,boolean,undefined,null,bigint)
+// premitive datatype: Here any variable assigned a singel value (Number,string,boolean,undefined,null,bigint)
 // Non Premitive datatypes: here any variable can assigned multiple value (object,array(actually array belongs to object in JS))
+
+// const num = 5.84875;
+// console.log(typeof num);// number
 
 // let userDetails = {name:"arghya", age:20, Stream:"CSE"};
 // console.log(typeof userDetails);---> return object
@@ -67,18 +78,18 @@
 
 // const x = "apple";
 // const y = "banana";
-// console.log(x+y);--> only this will give output as "applebanana" others all output will be "NaN" as it can't be 
+// console.log(x+y);--> only this will give output as "applebanana" others all operator's output will be "NaN" as it can't be 
 //                      typecastes
 // console.log(x-y);
 // console.log(x%y);
 
 
 //------------------- Js object-----------------
-//**********In js object we can use unction inside object and we can access it:**************
+//**********In js object we can use function inside object and we can access it:**************
 // const user = {
 //     userName : "Arghya",
 //     age: 23,
-//     greet(){
+//    greet(){
 //         console.log("hello "+ this.userName);
 //     }
 // }
@@ -90,7 +101,7 @@
 // works similar to the function expression as we will do in annonomus function
 // let hello = "";
 // hello = (/*parameter*/val) => "Hello, this is " + val;
-// console.log(hello("universe!"));----->o/p: Hello, this is universe!
+// console.log(hello("universe!"));//----->o/p: Hello, this is universe!
 
 // If your arrow function contains no other logic but a return statement, 
 // you may omit the curly braces and the return keyword.
@@ -107,12 +118,12 @@
 // number => return number * 3; // invalid because return keyword must also be omitted!
 //number => if (number === 2) { return 5 }; // invalid because if statements can't be returned
 
-// let arrowfunc = number =>{
+// let arrowfunc = (number) =>{
 //     if(number>5){
 //         return 5;
 //     }
 // }
-// console.log(arrowfunc(6));
+// console.log(arrowfunc(6));//5
 
 // let sumorsub = (x,y)=>x>y?x-y:x+y;
 // console.log(sumorsub(15,85))
@@ -175,7 +186,7 @@
 // console.log("apple">"banana"); --> return false. because it checks one by one letters ascii value
 // console.log("5">3);--> return true, as areathmatic operator it typecast string to number by convention
 // console.log("01"==1);--> it will return true as in previous convection for this reason === strict equality operator comes
-// console.log("01"===1); it will be faulse
+// console.log("01"===1); it will be false
 
 //----------------------conditional statements------------------
 // const rl = require("readline-sync");
@@ -231,13 +242,15 @@
 // or ||
 // not !
 // nullish coalescing ??
+
 // Truthy and faulsy value is the outcome of short circuiting
 // truthy and falsy value--> if we convert any variable to boolean if they return true then truthy otherwise falsy
+
 // Boolean(Null,undefined,"",0)-->falsy
 // const fname = "";
 // const nickname = "any";
 // console.log(fname || nickname); -- we can use or operator like this also "or" operator return first truthy value
-//                                     and if there is no truthy value then return last truthy value
+//                                     and if there is no truthy value then return last falsy value
 
 // const a = 12;
 // let b;
@@ -251,12 +264,18 @@
 //--------------------------------Nullish coalescing(??)-----------------------------------
 // nullish coalescing will only give the alternative value when other one is Null or Undefined(here truthy and
 //                                                                              falsy value concept it not used)
+// *******suppose, each value is Null or undefined it will return the last-one************
+//
 // const fname = "Arghya";
 // const lname = "";// it's not null, it's a empty string
 // let middlename;// undefined
 // console.log(fname ?? "No name");--->Arghya
 // console.log(lname ?? "No name");--->""
 // console.log(middlename ?? "No name");---->no name
+//--------------------------------each value null or undefined----------------------------------------------
+// console.log(null ?? null); // null
+// console.log(undefined ?? null??"arghya"); // arghya
+// console.log( null ??undefined ); // undefined
 
 //------------------------------- for loop and repeat ---------------------------------
 // sum of first 100 natural number
@@ -268,6 +287,7 @@
 // console.log('sum:',sum);
 // const rl = require("readline-sync");
 // const n = Number(rl.question("Tell me the number :"));
+// let sym = "* "
 // console.log(sym.repeat(5));-->*****
 // console.log(sym.repeat(4));
 // console.log(sym.repeat(3));
@@ -298,6 +318,7 @@
 //     console.log(sym.repeat(n-i-1));
 // }
 //--------------search the vowel---------------
+// .includes a boolean value
 // let inputString = "Arghya is a good boy";
 // let vowels = "aeiouAEIOU";
 // for(let i = 0;i<inputString.length;i++){
@@ -309,6 +330,9 @@
 
 // const rl = require("readline-sync");
 // const num = rl.questionInt("enter the number: ");
+// if(num<50){
+//   console.log(num);
+// }
 // while(num>50){
 //     const num = rl.questionInt("enter the number: ");
 //     if(num<50){
@@ -334,13 +358,13 @@
 //
 //------------anonymous function----------------
 // before declaration we can't call it as we can do in regular function
-// let anonymousfunc = function ()=>{
-//     console.log("It's a anonymous function");
+
+// let anonymousfunc = function(){
+//   console.log("It's a anonymous function");
 // }
-// anonymousfunc();
+// console.log(anonymousfunc());
 
 // sum of number min and max given by annonymus function
-
 // let sumofnum= function(min,max){
 //     let sum = 0;
 //     for(let i = min;i<=max;i++){
@@ -370,8 +394,7 @@
 // 	2. Execution phase-->create thread of execution(code component)--> single threaded synchronise language (async is also available)
 
 // Execution context:
-// 1.Creation phase--> memory to variables and function
-
+// 1.Creation phase--> memory to (variables and function)
 // 2.code component / execution phase:
 // Here in funcion getsum(num) FEC is created
 
@@ -393,6 +416,18 @@
 
 // Let and const are also hoisted but it's somwwhere at the temporal deadzone
 // Temporal deadzone is a time period from where the variable is hoisted and from where the variable is declared.(Let, const are hoisted in other memory space)
+
+// console.log(a); // undefined because in var hoisting is enabled in same memory space
+// console.log(b);// error occured, we can't access let before declaration because is is in tdz
+// let b;
+// var a;
+// console.log(a);//undefined
+// function shownum(a){
+//   console.log(a);
+// }
+// shownum(a);//undefined
+// a=15;
+// console.log(a);//10
 
 // If we try to access any let before initialization, It is shown "Cann't access variable before initialization"
 //----------------------------------------------------------------------------------------------------------
