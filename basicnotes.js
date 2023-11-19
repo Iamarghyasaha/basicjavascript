@@ -447,11 +447,11 @@
 // }
 // show every second item in an string
 // console.log(count);
-// for(let i = 0;i<str1.length;i+=2){
+// for(let i = 0;i<str1.length;i=i+2){
 //     console.log(str1[i])
 // }
 // -------------------------charAt() and charCodeAt() and String.fromCharCode(ascii code)-----------------------
-// charAt()--> gives/return the charecter in the passed index parameter
+// charAt()--> gives/return the character in the passed index parameter
 // charCodeAt()-->gives/return the ascii value of the character at a index 
 // String.fromCharCode(ascii code)--> convert ascii code to character
 // read any string and add one in every character "geek"-->"hffl"
@@ -461,7 +461,7 @@
 // let newstr ="";
 // for(i=0;i<str1.length;i++){
 //     let stnum = 0;
-//     stnum = str1.charCodeAt(i)+1;
+//     //stnum = str1.charCodeAt(i)+1;
 //     stnum = String.fromCharCode(str1.charCodeAt(i)+1);
 //     newstr = newstr + stnum;// to print in a single line
 // }
