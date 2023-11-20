@@ -411,7 +411,7 @@
 // It comes from the execution context.
 // Hosting-  let const and TDZ(Temporal deadzone):
 
-// Let and const are also hoisted but it's somwwhere at the temporal deadzone
+// Let and const are also hoisted but it's somewhere at the temporal deadzone
 // Temporal deadzone is a time period from where the variable is hoisted and from where the variable is declared.(Let, const are hoisted in other memory space)
 
 // console.log(a); // undefined because in var hoisting is enabled in same memory space
@@ -465,7 +465,7 @@
 // console.log(newstr);
 //-------------------------------------------------indexOf()----------------------------------------
 // indexOf()--> return the index of a character
-// by default it gives the first index
+// by default it gives the first index when the character is present multiple times
 // but we can control it by giving another parameter
 // like from which index it should start
 // indexOf("character", index to start);
@@ -519,10 +519,11 @@
 // console.log(lowerstr);
 
 //--------------------------------------substring()---------------------------
-// substring(starting index,ending index)---> including strating index, excluding ending index
+//substring(starting index,ending index)---> including strating index, excluding ending index
 // let str1 = "ldvjslj klaslkz jmdalv"
-// console.log(str1.substring(2,3));
+// console.log(str1.substring(2,3));//v
 // console.log(str1.substring(-1));// it will return the whole string
+// console.log(str1.substring(2,-1));// ld; return the first 2 index 
 
 //-----------------------------------trim() and replace()------------------------
 
@@ -535,6 +536,7 @@
 // const str1 = rl.question("enter any string: ");
 // console.log(str1.trim().substring(0,6));
 // let text = "jkjsnv kvj ;odkv           "
+// replace("what is to be replaced","by which it should be replaced")
 // let result = text.replace(/\s/g,''); // result will replace all space with no space
 // console.log(result);
 //

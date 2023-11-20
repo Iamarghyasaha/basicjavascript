@@ -11,7 +11,11 @@
 //9. nullish coalescing(??) will only give the alternative value when other one is Null or Undefined
 //10. suppose, all values are Null or undefined it will return the last-one
 
-
+//*****String*****/
+//11.  indexOf("character", index to start); if any charecter which is not present in given string it will return -1
+//12. str = "msc0lc"; str.includes("o",-2); o/p: true --> because  if the parameter is nagative then search through the whole string
+//13. substring(starting index,ending index)---> including strating index, excluding ending index// console.log(str.substring(-1));// it will return the whole string
+//14. No where the original value is changed, In every operation  we have to store the value in another varible to use
 
 
 
