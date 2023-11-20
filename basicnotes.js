@@ -18,7 +18,7 @@
 // else{
 //     const age=17
 // }
-// console.log(age);//---> will not throw any error give output 18 because const's blocked scoped
+// console.log(age);//---> will not throw any error give output 18 because const's blocked scoped, but it it was var it would give 19, because it is function scoped
 
 // let userName = "Rakesh";
 // console.log(typeof userName);---> give string
@@ -89,7 +89,7 @@
 // const user = {
 //     userName : "Arghya",
 //     age: 23,
-//    greet(){
+//      greet(){
 //         console.log("hello "+ this.userName);
 //     }
 // }
@@ -107,7 +107,7 @@
 // you may omit the curly braces and the return keyword.
 
 // Instead of
-// number => { 
+// (number) => { 
 //   return number * 3;
 // }
 
@@ -147,7 +147,7 @@
 //------------------------typecasting---------------------------
 //In the chapter Number Methods, you will find more methods that can be used to convert strings to numbers:
 // Method	Description(anydatatype-->Number)
-// Number()	Returns a number, converted from its argument
+// Number()	Returns a number, converted from its argument--> Number("98")// -->98
 // parseFloat()	Parses a string and returns a floating point number
 // parseInt()	Parses a string and returns an integer
 
@@ -155,7 +155,7 @@
 // It can be used on any type of numbers, literals, variables, or expressions:
 // Example
 // String(x)         // returns a string from a number variable x
-// String(123)       // returns a string from a number literal 123
+//String(123)       // returns a string from a number literal 123
 // String(100 + 23)  // returns a string from a number from an expression
 //The Number method toString() does the same.
 
@@ -163,7 +163,7 @@
 // Boolean("4")--> true
 // Boolean("")--> false because empty string
 // Boolean("arghya")--> true -->any string will return true unless it's a empty string
-// Boolean("")-->false
+// console.log(Boolean(null))//-->false
 
 
 //-----------------------readline-sync-------------------
@@ -216,6 +216,7 @@
 // const marks = rl.question("what marks you get?");
 // const message = (marks>40) ? "you pass" : "you fail";
 // console.log(message);
+// tunery chaining
 // const grade = (marks<40) ? "F": marks<60 ? "B" : marks<80 ? "A" : marks<90 ? "A+" : (marks<95) ? "A+" : "Ecxcellent"
 // console.log(grade);
 
@@ -262,9 +263,8 @@
 
 
 //--------------------------------Nullish coalescing(??)-----------------------------------
-// nullish coalescing will only give the alternative value when other one is Null or Undefined(here truthy and
-//                                                                              falsy value concept it not used)
-// *******suppose, each value is Null or undefined it will return the last-one************
+// nullish coalescing will only give the alternative value when other one is Null or Undefined
+// *******suppose, all values are Null or undefined it will return the last-one************
 //
 // const fname = "Arghya";
 // const lname = "";// it's not null, it's a empty string
@@ -318,7 +318,7 @@
 //     console.log(sym.repeat(n-i-1));
 // }
 //--------------search the vowel---------------
-// .includes a boolean value
+// .includes returns a boolean value
 // let inputString = "Arghya is a good boy";
 // let vowels = "aeiouAEIOU";
 // for(let i = 0;i<inputString.length;i++){
@@ -385,7 +385,7 @@
 // 	2. FEC-> Functional Executional context--> can be multiple FEC
 
 // Every Execution context has 3 part:
-// 	    1. Variable object/argument object: -->memory
+// 	    1. Variable object/argument object: --> memory
 // 	    2. Environment for scope and scope chain.
 // 	    3. Setting the value of this keyword
 
@@ -398,15 +398,12 @@
 // 2.code component / execution phase:
 // Here in funcion getsum(num) FEC is created
 
-
-
 // Execution Context created in call Stack:
 // 	1. GEC created at the buttom
 // 	2. FEC will be on top of the GEC
 // 	3. If there is Inner GEC will be on the top of FEC
 	
 // 	Deletion will also be as stack done in LIFO manner
-	
 	
 
 // Hosting- var & function:
