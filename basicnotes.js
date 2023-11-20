@@ -2053,8 +2053,9 @@
 
 //--------------------------------------Async and Wait---------------------------------------------
 
-// Async: Async simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event loop. 
-//async by default returns a fullfilled promise wheather it is a string number or a promise.
+// Async: Async simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event loop. async by default returns a fullfilled promise wheather it is a string number or a promise.
+
+//Await: Await function is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
 
 // function returnsome1(){
 //   return "Prakash";
@@ -2078,15 +2079,39 @@
 // console.log(promise);// Promise { <pending> }
 // promise.then((response)=>{console.log(response)});// done done
 
-//Await: Await function is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
+// async and await is the elegent way of writting the promise
+// async is the keyword to make the return value of any function to a primise
 
-
-
-
-
-
-
-
+// async function returnsome(){
+//   const promise = new Promise((resolve)=> resolve("Promise done"));
+//   const result = await promise;// by await keyword function execution stops here, until the promise is settled(either fullfilled or settled)
+//   console.log(result);
+// }
+// returnsome();// Promise done
+//--------------------------------------------------------
+// for rejection of promise as we are not using .then .catch, so, to catch error we should write the code in try catch block
+// async function returnsome(){
+//   try{
+//     const promise = new Promise((_,rej)=> rej("Promise rejected"));
+//     const result = await promise;// by await keyword function execution stops here, until the promise is settled(either fullfilled or settled)
+//     console.log(result);
+//   }catch(err){
+//     console.log(err);
+//   }
+// }
+// returnsome();// Promise rejected
+//----------------------------------------------------------
+// const getuserdata = async()=>{
+//   try{
+//     const promise = await fetch(" https://api.github.com/users/prakashsakari");
+//     const response = await promise.json();
+//     console.log(response);// the total json object
+//     console.log(response.login); // it will return the login attriibute of the object
+//   }catch(err){
+//     console.log("error occured"+ err);
+//   }
+// }
+// getuserdata();
 
 
 
