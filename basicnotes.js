@@ -633,7 +633,7 @@
 //            returning the deleted elements.
 //****splice(strating index, no of element to delete)****(including starting index, elemments to delete)
 //to add element--->splice(before strating index, 0, "element to add")
-// 
+
 // ***pop()***
 // let arr1 = [8,9,4,5];
 // let poppedelement = arr1.pop();
@@ -665,6 +665,7 @@
 // console.log(str2); // [ 'apple', 'react js', 'hello', 'arghya', 'jrl' ]
 //
 //--------------------includes(any)--------------
+
 // return bolean value 
 // as string in array also there is include function
 // const availablesize =["S","M","L","XL","XXL","XXXL"];
@@ -682,7 +683,7 @@
 // lexicographical it works as string manner. so, even if we apply on number
 //  const fruits = ["apple","mango","orange","banana"];
 //  fruits.sort();
-//  console.log(fruits);//o/p:   [ 'apple', 'banana', 'mango', 'orange' ]
+//  console.log(fruits);//o/p: [ 'apple', 'banana', 'mango', 'orange' ]
 // let arr = [9,8,7,5,4,2,8];
 // arr.sort();
 // console.log(arr); //[  2, 4, 5, 7, 8, 8, 9]
