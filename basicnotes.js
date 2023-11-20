@@ -1647,7 +1647,7 @@
 //The code defines a User class with a private instance variable, #id, initialized to 123 in the class definition. Subsequently, a new instance of the class is created and assigned to the user variable. However, attempting to directly modify the #id private property using the syntax user. #id = 321; results in a syntax error since Private Properties are not accessible from outside the class.
 
 
-//------------------------------------------------ Asynchronous JavaScript-----------------------------------------------------
+//--------------------------------------------------------- Asynchronous JavaScript--------------------------------------------------------------
 
 //---------------------------------Async and Differ----------------------------
 
