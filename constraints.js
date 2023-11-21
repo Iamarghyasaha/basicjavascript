@@ -34,7 +34,7 @@
 //28. join()--> join(parameter)--> joins wherever it shows the parameter.(Original array is not chnaged)
 //29. The JavaScript spread operator ( ... ) allows us to quickly copy all or part of an existing array or object into another array or object.
 //30. instead of push we can spread the array and add element to it as well as another array.  arr3 = [...arr1,...arr2,10,11,13]
-//31. The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+//31. The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.[] used
 
 //**********Object**************/
 //32. In object we can access value with console.log(personobj["Key"]); syntax also
@@ -42,14 +42,33 @@
 //34. [course]: "course not available" // this [] bracket tells course is a variable not a direct key, const course = rl.question("tell the course: ")--whatever course you input it will take as a variable 
 //35. add element into obj: like obj.usercity = "kolkata"; // we can add element like this
 //36. "key" in object will return true if the key is present in the object and return false if it is not in the object
+
 //37. In object aslo take shallow copy and copied object referencing to the main object. In simple words object copied by reference not value.
 //38. In place of spread operator here we use---***Object.assign(target,source)***---to copy object to different object, it is alos a shallow copy[const obj2 = Object.assign({},(obj1);]
 //39. Object.assign(target,source) works poperly when there is no nested object, but in case of nested object it will change the both array if one is manipulated.
-//40. 
 
+//40. You can use optional chaining when attempting to call a method which may not exist.***(object?.attribute1?.nestedattributed)***
+//41. Option chaining will throw undefined if the property/expression/index is not available, instead of traditional accessing will throw error 
+//42. At first it will check first parameter is present of not, if not then return undefined. if found then only check the next attribute
 
+//43. let obj3 = {username: "Arghya",address:{city:"Kolkata",state:"WB"},phone: 9874157553}, let {username : uname, address: useraddress } = obj3; // change key name (username to---> uname) and (address to--> useraddress) // now you can't access with username it will give error
+//44. same destructuring methods as in array but for nested objected let we use this manner {address:{city,state}} = obj3
+//45. [Object.entries(object name);--> retrun array of key value pair in array inside array manner] .[Object.keys(object name);-->return array of keys.] [Object.values(object name);--> return array of values]
 
+//46. this keyword: refers to the object that is executing the function.
+//47. But we can't use (.this) with arrow function (if we use this will refer to window object not to the parent object)
+//48. Implicit binding occurs when dot notation is used to invoke a function. For example: var MyObject = function (){ this.name = 'MyObjectName'; this. myProperty = 'property'; }; MyObject. 
+//49. For every objecte we have to write the same function inside to use with every object, to overcome this we have explicit binding
 
+//50. function borrowing (Explicit Binding)---> call() apply() bind()
+//51. function sayname(degree,batch){console.log(this.username,degree,batch) };// explicit binding of this
+//52. sayname.call(obj1,"B.tech","2022");// Arghya B.tech 2022 // in call() we pass parameters as string
+//53. sayname.apply(obj1,["B.tech", "2022"]); // Arghya B.tech 2022 // in apply() if there any parameters, we pass parameters as array of strings 
+//54. const res = sayname.bind(obj1,"B.tech"); // takes object as first parameter and store to an variable then call the variable, even you can add more parameters to the variable at the time of calling,--> res(); // Arghya B.tech undefined, res("2022"); // Arghya B.tech 2022 ---> we can pass parameter this way also.
+
+//55.Constructor function technically is a regular function. It has 2 convention. They are named with capital letter first. they should be executed only with "new" operator,it works like class and object pattern
+
+//***********Higher Order Function*************/
 
 
 

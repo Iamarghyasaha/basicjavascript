@@ -1016,13 +1016,13 @@
 //         console.log(`Hello! ${this.uname} age: ${this.age} stream: ${this.stream}`); // implicit binding
 //     }
 // }
-
-// to use greetuser function we have to write the same function with this keyword this called implicit binding
+// obj2.greetuser();
+// to use greetuser function we have to write the same function with this keyword for another object this called implicit binding
 // to overcome this we have Explicit binding
 //
 //---------------------------function borrowing (Explicit Binding)---> call() apply() bind() ----------------------------------
-
-// call apply bind is method of function not object
+//
+// call apply bind is method of function not object:
 // call()--.The call() method calls the function directly and sets this to the first argument passed to the call method and if any other sequences of arguments preceding the first argument are passed to the call method then they are passed as an argument to the function.
 // *****************************Syntax: functionname.call(objectname,parameter in string)*************************
 //apply()--The apply() method calls the function directly and sets this to the first argument passed to the apply method and if any other arguments provided as an array are passed to the call method then they are passed as an argument to the function.
@@ -1667,7 +1667,7 @@
 
 //
 //<--------------------------->    js downloading start-end    js execution  start-end      <---------------------------->
-//   Html Parsing start-pause <------------------------------><------------------------------> Html again start parting
+//   Html Parsing start-pause <------------------------------><----------------------------> Html again start parting
 //
 //
 
