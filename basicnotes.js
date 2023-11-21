@@ -823,25 +823,32 @@
 //     stream : "CE",
 //     phone: 9874157553,
 //     [course]: "course not available" // this [] bracket tells course is a variable not a direct key
-//                                     // whatever course you input it will take as a variable and 
+//                                     // whatever course you input it will take as a variable 
 // }
+
+
+// console.log(obj[key]); // by this we can print the value of any provided key
+// console.log(`${course}:`,obj[course]); // course not available
+
+//O/P:
+// What is the key: username 
+// tell the course: react
+// arghya
+// react: course not available
 
 // //***** add element into obj:****
 
 // obj.usercity = "kolkata"; // we can add element like this
 // obj.userstate = "WB";
-
 // console.log(obj);
-// // {
-// //     username: 'arghya',
-// //     stream: 'CE',
-// //     phone: 9874157553,
-// //     usercity: 'kolkata',
-// //     userstate: 'WB'
-// //   }
-// //
-// console.log(obj[key]); // by this we can print the value of any provided key
-// console.log(`${course}:`,obj[course]); // course not available
+// {
+//     username: 'arghya',
+//     stream: 'CE',
+//     phone: 9874157553,
+//     usercity: 'kolkata',
+//     userstate: 'WB'
+//   }
+
 //
 //------------------- for in on object--------------------
 
@@ -889,11 +896,12 @@
 
 // const obj2 = Object.assign({},obj1); // coping to blank object then assign to another object, so, it's not stored by another array's reference. but still it's a shallow copy not a deep copy
 // obj1.city ="Hyderabad";
-// console.log(obj1); // { username: 'Arghya', city: 'Hyderabad', state: 'WB' }
-// console.log(obj2);  // { username: 'Arghya', city: 'Kolkata', state: 'WB' }
-// Object.assign(target,source) works poperly when there is no nested object, but in case of nested object it will change the both array is one manipulated
+// console.log(obj1); // {username: 'Arghya', city: 'Hyderabad', state: 'WB' }
+// console.log(obj2);  // {username: 'Arghya', city: 'Kolkata', state: 'WB' }
+// Object.assign(target,source) works poperly when there is no nested object, but in case of nested object it will change the both array if one is manipulated
 //
 //-----------------------Optional Chaining-----------------
+// You can use optional chaining when attempting to call a method which may not exist.
 // (object?.attribute1?.nestedattributed)
 // const obj1 = 
 // {

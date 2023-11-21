@@ -37,9 +37,15 @@
 //31. The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 
 //**********Object**************/
-
-
-
+//32. In object we can access value with console.log(personobj["Key"]); syntax also
+//33. either you add function inside object like this by key as function name and parameter as function{},e.g., greet: function  (){}
+//34. [course]: "course not available" // this [] bracket tells course is a variable not a direct key, const course = rl.question("tell the course: ")--whatever course you input it will take as a variable 
+//35. add element into obj: like obj.usercity = "kolkata"; // we can add element like this
+//36. "key" in object will return true if the key is present in the object and return false if it is not in the object
+//37. In object aslo take shallow copy and copied object referencing to the main object. In simple words object copied by reference not value.
+//38. In place of spread operator here we use---***Object.assign(target,source)***---to copy object to different object, it is alos a shallow copy[const obj2 = Object.assign({},(obj1);]
+//39. Object.assign(target,source) works poperly when there is no nested object, but in case of nested object it will change the both array if one is manipulated.
+//40. 
 
 
 
