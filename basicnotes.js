@@ -1117,7 +1117,7 @@
 //     newarr.push(...arr,5,6); // if we directly manipulate the original array then also it's not a pure array if the original array changed
 //     return newarr;
 // }
-// const arr1 = [1,2,3,4,];
+// const arr1 = [1,2,3,4];
 // const addedarray = addelementtoarray(arr1);
 // console.log(addedarray); // [ 1, 2, 3, 4, 5, 6 ]
 
@@ -1184,7 +1184,6 @@
 
 // const output = diplaymsg();
 // output();
-
 
 // example of using higher order function-->>
 

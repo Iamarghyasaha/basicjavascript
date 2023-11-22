@@ -70,6 +70,12 @@
 
 //***********Higher Order Function*************/
 
+//56. Pure Function: A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. It does not depend on any state or data change during a program's execution. Rather, it only depends on its input arguments.The result should not be influenced by the outer parameter. It should not mutate the original argument.
+//57. First-Class Function: A programming language is said to have First-class functions if functions in that language are treated like other variables. So the functions can be assigned to any other variable or passed as an argument or can be returned by another function. JavaScript treat function as a first-class-citizens. Function takes another function as aurgument and also can return another function.
+//58. If a function is returning another function which is nested inside that function then it to access it we have to use prarentfunction()() or we have to store it to another variablea and again call the varible which conataining the reference of that function.
+
+//59. Higher order function: A function that accaetps another function as an argument or returns a function or does the both called Higher Order Function.
+
 
 
 
