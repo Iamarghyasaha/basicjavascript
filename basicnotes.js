@@ -1214,8 +1214,8 @@
 
 // *********** use of map function ****************
 // const arr = [2,4,5,6];
-// function square(num,pow){
-//     return num ** pow;
+// function square(num){
+//     return num ** num;
 // }
 // const newarray = arr.map(square); //without using for loop, map use to impose function to entire array, so in map it takes function and works like a hof
 // console.log(newarray);
@@ -1246,8 +1246,8 @@
 //  const filteredarr = arr.filter(number => number>5); // [ 9, 8, 7 ] // it's equivalent to (number=> return number>5)
 //  console.log(filteredarr)
 
-//  const arr1 = [400,5000,956474,84632,1000,255,755];
-//  const zerodivarr = arr1.filter(number=>(number%100 === 0));
+//  const arr1 = [4,16,400,5000,956474,84632,1000,255,755];
+//  const zerodivarr = arr1.filter(number=>(number%100 === 0) || (number%4===0));
 // console.log(zerodivarr);
 
 //------------------------------------ reduce() -------------------------------------
@@ -1354,7 +1354,7 @@
 //--------------------------------------Recursion-----------------------------------------------
  // recursion is a programming term where the function calls itself
 //*************sum of numbers **********
-//  function calsum(number){
+// function calsum(number){
 //     let sum = 0;
 //     if(number>0){
 //         sum = number + calsum(number-1);

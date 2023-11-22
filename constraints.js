@@ -77,7 +77,23 @@
 //59. Higher order function: A function that accetps another function as an argument or returns a function or does the both called Higher Order Function.
 //60. map() - filter() - reduce()  is higher order function
 //61. map(): it can take function as parameter so higher order function, ***map loop iterate over the array***, map returns an array. ie.; const newarray = arr.map(square);
-//62. 
+
+//62. filter(): filter is a Higher order function.The JavaScript Array filter() Method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method.    ie.;  const filteredarr = arr.filter(number => number>5), 
+// const zero4divarr = arr1.filter(number=>(number%100 === 0) || (number%4===0));
+
+//63. reduce(): The Javascript arr.reduce() method in JavaScript is used to reduce the array to a single value and executes a provided function for each value of the array (from left to right) and the return value of the function is stored in an accumulator. 
+// i.e.; const reducefunc = arr.reduce((acc,curr)=>acc+curr);
+// const reducefunc1 = arr1.reduce(((acc,curr) => acc*curr),2); // acc containing 2 from the first itreation of result will be multiplied by 2.
+
+//64. Argument object in non arrow function: argument object is an array like object present locally inside a function and it contains value of all the argument passed to the function
+
+//65. The rest parameter is an improved way to handle function parameters, allowing us to more easily handle various inputs as parameters in a function. The rest parameter syntax allows us to represent an indefinite number of arguments as an array. Rest should be the last parameter in arguments. const arr = [7,9,5,7,9,2,4]; function arrayadd(...rest){}
+// function arrayadd(a,b,...rest){}
+
+//66. Closure: A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. Since JavaScript is event-driven so closures are useful as it helps to maintain the state between events.A closure is the combination of the function bundled together with reference to its lexical environments is known as closure. In other words - A closure is a function that remembers its outer variable and can access them.
+
+
+
 
 
 
