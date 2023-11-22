@@ -1222,12 +1222,22 @@
 
 // *********** use of map function ****************
 // let arr = [2, 5, 6, 3, 8, 9];
-// // Using map to transform elements
-// let newArr = arr.map(function (val, index) { // map can give index also
+// Using map to transform elements
+
+// let newArr = arr.map(function (val,index) { // map can give index also; 
 // 	return { key: index, value: val * val };
 // })
 // // Display output
 // console.log(newArr)
+//o/p:
+// [
+//   { key: 0, value: 4 },
+//   { key: 1, value: 25 },
+//   { key: 2, value: 36 },
+//   { key: 3, value: 9 },
+//   { key: 4, value: 64 },
+//   { key: 5, value: 81 }
+// ]
 //------------------------------------------filter()------------------------------
 // filter is a Higher order function
 // The JavaScript Array filter() Method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method. 

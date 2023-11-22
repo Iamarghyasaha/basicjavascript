@@ -74,7 +74,12 @@
 //57. First-Class Function: A programming language is said to have First-class functions if functions in that language are treated like other variables. So the functions can be assigned to any other variable or passed as an argument or can be returned by another function. JavaScript treat function as a first-class-citizens. Function takes another function as aurgument and also can return another function.
 //58. If a function is returning another function which is nested inside that function then it to access it we have to use prarentfunction()() or we have to store it to another variablea and again call the varible which conataining the reference of that function.
 
-//59. Higher order function: A function that accaetps another function as an argument or returns a function or does the both called Higher Order Function.
+//59. Higher order function: A function that accetps another function as an argument or returns a function or does the both called Higher Order Function.
+//60. map() - filter() - reduce()  is higher order function
+//61. map(): it can take function as parameter so higher order function, ***map loop iterate over the array***, map returns an array. ie.; const newarray = arr.map(square);
+//62. 
+
+
 
 
 
