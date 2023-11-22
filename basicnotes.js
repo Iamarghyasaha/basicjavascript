@@ -1246,6 +1246,16 @@
 //  const filteredarr = arr.filter(number => number>5); // [ 9, 8, 7 ] // it's equivalent to (number=> return number>5)
 //  console.log(filteredarr)
 
+// let arr =[4,8,3,7,89,45,22,40]
+// function check(num){
+//     if(num%2 ===0){
+//         return num;
+//     }
+// }
+// const arr1 = arr.filter(check);
+// console.log(arr1);v// [ 4, 8, 22, 40 ]
+
+
 //  const arr1 = [4,16,400,5000,956474,84632,1000,255,755];
 //  const zerodivarr = arr1.filter(number=>(number%100 === 0) || (number%4===0));
 // console.log(zerodivarr);

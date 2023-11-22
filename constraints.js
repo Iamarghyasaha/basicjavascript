@@ -2,7 +2,7 @@
 //2. The scope of a var variable is functional scope, let is blocked scope, const is blocked scope.
 
 //3. Number("98")// -->98, String(123)//-->"123", toString(123);// Boolean("arghya")//-->true
-//4. Above typrcasting doesn't change the original data. So, we have to store it to use.
+//4. Above typecasting doesn't change the original data. So, we have to store it to use.
 //5. console.log("apple">"banana"); --> return false. because it checks one by one letters ascii value
 
 //6. Boolean(Null,undefined,"",0)-->falsy
@@ -44,7 +44,7 @@
 //36. "key" in object will return true if the key is present in the object and return false if it is not in the object
 
 //37. In object aslo take shallow copy and copied object referencing to the main object. In simple words object copied by reference not value.
-//38. In place of spread operator here we use---***Object.assign(target,source)***---to copy object to different object, it is alos a shallow copy[const obj2 = Object.assign({},(obj1);]
+//38. In place of spread operator here we use---***Object.assign(target,source)***---to copy object to different object, it is alos a shallow copy[const obj2 = Object.assign({},obj1);]
 //39. Object.assign(target,source) works poperly when there is no nested object, but in case of nested object it will change the both array if one is manipulated.
 
 //40. You can use optional chaining when attempting to call a method which may not exist.***(object?.attribute1?.nestedattributed)***
@@ -53,7 +53,7 @@
 
 //43. let obj3 = {username: "Arghya",address:{city:"Kolkata",state:"WB"},phone: 9874157553}, let {username : uname, address: useraddress } = obj3; // change key name (username to---> uname) and (address to--> useraddress) // now you can't access with username it will give error
 //44. same destructuring methods as in array but for nested objected let we use this manner {address:{city,state}} = obj3
-//45. [Object.entries(object name);--> retrun array of key value pair in array inside array manner] .[Object.keys(object name);-->return array of keys.] [Object.values(object name);--> return array of values]
+//45. *******[Object.entries(object name);--> retrun array of key value pair in array inside array manner] .[Object.keys(object name);-->return array of keys.] [Object.values(object name);--> return array of values]
 
 //46. this keyword: refers to the object that is executing the function.
 //47. But we can't use (.this) with arrow function (if we use this will refer to window object not to the parent object)
