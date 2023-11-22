@@ -92,6 +92,8 @@
 
 //66. Closure: A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. Since JavaScript is event-driven so closures are useful as it helps to maintain the state between events.A closure is the combination of the function bundled together with reference to its lexical environments is known as closure. In other words - A closure is a function that remembers its outer variable and can access them.
 
+//**********DOM************/
+//67.
 
 
 
