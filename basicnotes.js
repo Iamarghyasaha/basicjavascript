@@ -1253,7 +1253,7 @@
 //     }
 // }
 // const arr1 = arr.filter(check);
-// console.log(arr1);v// [ 4, 8, 22, 40 ]
+// console.log(arr1); // [ 4, 8, 22, 40 ]
 
 
 //  const arr1 = [4,16,400,5000,956474,84632,1000,255,755];

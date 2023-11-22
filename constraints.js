@@ -75,7 +75,7 @@
 //58. If a function is returning another function which is nested inside that function then it to access it we have to use prarentfunction()() or we have to store it to another variablea and again call the varible which conataining the reference of that function.
 
 //59. Higher order function: A function that accetps another function as an argument or returns a function or does the both called Higher Order Function.
-//60. map() - filter() - reduce()  is higher order function
+//60. map() - filter() - reduce()  is higher order function: use use the function parameter's reference we don't call it
 //61. map(): it can take function as parameter so higher order function, ***map loop iterate over the array***, map returns an array. ie.; const newarray = arr.map(square);
 
 //62. filter(): filter is a Higher order function.The JavaScript Array filter() Method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method.    ie.;  const filteredarr = arr.filter(number => number>5), 
