@@ -46,27 +46,52 @@
     </style>
 </head>
 <body> 
-        <!-- <div class="btnparent">
+    <ul class="parent">
+        <li>Monday</li>
+        <li>Tuesday</li>
+        <li>Wednesday</li>
+        <li>Thursday</li>
+    </ul>
+        <div class="btnparent">
             <input type="text" class="input">
             <button id="stratbtn" class="btn"><img src="/assets/icons8-start-button-50.png" alt="404">Play</button>
             <button class="pausebtn btn"><img src="/assets/icons8-pause-50.png" alt="404">Pause</button>
             <button id="stopbtn" class="btn"><img src="/assets/icons8-stop-48.png" alt="404">Stop</button>
-        </div> -->
+        </div>
     <script>
         // DOM Selector
         // those dom selector should be always written in top:
-        // let start = document.getElementById("stratbtn");// to access the Start button
-        // let pause = document.querySelector(".pausebtn");// to access the Pause button
+        // let start = document.getElementById("stratbtn");// to access the start button
+        // let pause = document.querySelector(".pausebtn");// to access the pause button
         // let stopb = document.querySelector("#stopbtn");// to access the Stop button
-        // let all = document.querySelectorAll(".btn"); // select all button togather by same class, it will give an array of buttons
+        // let all = document.querySelectorAll(".btn"); // select all button togather by same class, it will give a nodelist of buttons which is similar to array but not array
         // let input = document.querySelector(".input")// select input class by dom selector
 
+        // select parent and access children by dom selector
+
+        // const par = document.querySelector(".parent");
+        // console.log(par); // it will show the entire HTML
+        // console.log(par.children);// html collectetion of  <ul class="parent"> .................</ul>
+        // console.log(par.children[1].innerHTML)// Tuesday
+        // for(let i = 0; i<par.children.length;i++){
+        //     console.log(par.children[i].innerHTML);
+        // }
+
+        //o/p:
+        // Monday
+        // Tuesday
+        // Wednesday
+        // Thursday
+
+
         //Event Listner:The addEventListener() is an inbuilt function in JavaScript which takes the event to listen for, and a second argument to be called whenever the described event gets fired. Any number of event handlers can be added to a single element without overwriting existing event handlers. 
+        // ***********.addEventListener("event",function to perform)*****************
 
         // start.addEventListener("click",()=>{
         //     start.innerText = "Hello!";
         // })
-        //The addEventListener() is an inbuilt function in JavaScript which takes the event to listen for, and a second argument to be called whenever the described event gets fired. 
+        
+        // The addEventListener() is an inbuilt function in JavaScript which takes the event to listen for, and a second argument to be called whenever the described event gets fired. 
         // apply css class that way------>
 
         // start.addEventListener("click",()=>{
@@ -100,7 +125,6 @@
             //         event.target.classList.toggle("btn-red");// apply the css class btn-red to it in toggle mode
             //     }
             // })
-
     </script>
     <!-- /*callback how async js works*/ -->
     <button id="btn">Click Me</button>

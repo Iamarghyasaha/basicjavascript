@@ -72,7 +72,7 @@
 
 //56. Pure Function: A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. It does not depend on any state or data change during a program's execution. Rather, it only depends on its input arguments.The result should not be influenced by the outer parameter. It should not mutate the original argument.
 //57. First-Class Function: A programming language is said to have First-class functions if functions in that language are treated like other variables. So the functions can be assigned to any other variable or passed as an argument or can be returned by another function. JavaScript treat function as a first-class-citizens. Function takes another function as aurgument and also can return another function.
-//58. If a function is returning another function which is nested inside that function then it to access it we have to use prarentfunction()() or we have to store it to another variablea and again call the varible which conataining the reference of that function.
+//58. If a function is returning another function which is nested inside that function then it to access it we have to use prarentfunction()() or we have to store it to another variable and again call the varible which conataining the reference of that function.
 
 //59. Higher order function: A function that accetps another function as an argument or returns a function or does the both called Higher Order Function.
 //60. map() - filter() - reduce()  is higher order function: use use the function parameter's reference we don't call it
@@ -93,7 +93,20 @@
 //66. Closure: A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. Since JavaScript is event-driven so closures are useful as it helps to maintain the state between events.A closure is the combination of the function bundled together with reference to its lexical environments is known as closure. In other words - A closure is a function that remembers its outer variable and can access them.
 
 //**********DOM************/
-//67.
+//67. There are some DOM Selectors. By which we are selecting the dom like (getElementByID,querySelector,.....)
+//68. getElementById('Idname').id// it will give the id
+//69. getElementById('Idname').className// it will give the class name---> we cant access class directly by .class
+
+//70. we can also get attribute with the dom selector. getElementById('Idname').getAttribute('id') // it will give the id name
+//71. as get attribute we can also set the attribute:  getElementById('Idname').setAttribute('class','classname') // the classattribute will be change in the dom
+//72. we can implement style aslo getElementById('Idname').style.backgroundColor = 'red';
+
+//73. we can access the content with the help of (innerHTML,innerText,textContent)
+//74. innerText: this will give show the visible text 
+//75. textContent: this show the total content, including the hiding content also which we hiding through dispaly or css property.(display:none) 
+//76. innerHTML: this will give the entire text and if any inner html tag included in it, it will give this also.
+
+//77. .addEventListner("event",function to trigger)
 
 
 

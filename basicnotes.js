@@ -1374,12 +1374,13 @@
 //  console.log(calsum(10));
 // *****factorial with recursion*******
 // function factorial(num){
-//     if(num===1 || num==0){
-//         return num;
+//     if(num===0){
+//         return 1; 
 //     }
 //     if(num>0){
 //     return num * factorial(num-1);
 //     }
+  
 // }
 // console.log(factorial(5));
 
