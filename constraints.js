@@ -107,7 +107,12 @@
 //76. innerHTML: this will give the entire text and if any inner html tag included in it, it will give this also.
 
 //77. .addEventListner("event",function to trigger)
+//78. Event Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the .target property of the event object.This event bubbling is connected to event delegation, when we need to perform same event with multiple element. Then without applying the eventlistner multiple time, we create eventlistner with the parent tag.
 
+//****************Class*****************/
+
+//79. Prototype: Every object in Javascript has a hidden property called "Prototype".The value of this property can be null or a reference to another object.  Every subject can have only one prototype
+//80. "__proto__" is reserved keyword to declare a prototype it will not show in console it will show under hidden property prototype as nested property.
 
 
 

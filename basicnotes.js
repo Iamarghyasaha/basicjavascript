@@ -1466,7 +1466,7 @@
 
 //---------------------------------------------------------------Class-------------------------------------------------------------
 
-//-------------------------------------Prototype------------------------------------
+//---------------------------------Prototype--------------------------------------
 // Prototype: Every object in Javascript has a hidden property called "Prototype". 
 // The value of this property can be null or a reference to another object. 
 // Every subject can have only one prototype
