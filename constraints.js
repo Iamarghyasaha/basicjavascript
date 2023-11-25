@@ -180,8 +180,8 @@
 
 //108. Await: Await function is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
 //109. async and await is the elegent way of writting the promise, async is the keyword to make the return value of any function to a promise
-//110. by await keyword function execution stops here, until the promise is settled(either fullfilled or settled)
-//111. for rejection of promise as we are not using .then .catch, so, to catch error we should write the code in try catch block
+//110. By await keyword function execution stops here, until the promise is settled(either fullfilled or settled)
+//111. For rejection of promise as we are not using .then .catch, so, to catch error we should write the code in try catch block
 
 
 
