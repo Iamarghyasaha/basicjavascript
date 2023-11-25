@@ -2016,8 +2016,9 @@
 // setTimeout(()=>{reject("Promise2 rejected"),2000})
 
 
-//*******************************************Fetch()************************************
-// Fetch API is an asynchronous web API that comes with native JavaScript, and it returns the data in the form of promises
+//*************************************Fetch()************************************
+
+// Fetch API is an asynchronous web API that comes with native JavaScript, and it returns the data in the form of promises.
 // The fetch() method starts the process of fetching a resource from a server.
 // The fetch() method returns a Promise that resolves to a Response object.
 
@@ -2070,7 +2071,7 @@
 
 
 // let promise1 = new Promise((resolve,reject)=>reject("Promise1 rejected"))
-// let promise2 = new Promise((resolve,reject)=>reject("Promise2 rejected"))
+// let promise2 = new Promise((resolve,reject)=>resolve("Promise2 rejected"))
 // let promise3 = new Promise((resolve,reject)=>resolve("Promise3 rejected"))
 // let promiserace = Promise.race([promise1,promise2,promise3]);
 // promiserace.then((reponse)=>console.log(reponse)).catch((err)=>console.log(err)); // Promise1 rejected
@@ -2080,7 +2081,7 @@
 // if every promise gets rejected then promise.any() will throw error
 
 // let promise4 = new Promise((resolve,reject)=>reject("Promise1 rejected"))
-// let promise5 = new Promise((resolve,resolved)=>rejeB("Promise2 resolved"))
+// let promise5 = new Promise((resolve,resolved)=>resolve("Promise2 resolved"))
 // let promise6 = new Promise((resolve,reject)=>reject("Promise3 rejected"))
 // let promiseany = Promise.any([promise4,promise5,promise6]);
 // promiseany.then((reponse)=>console.log(reponse)).catch((err)=>console.log(err)); //Promise2 resolved

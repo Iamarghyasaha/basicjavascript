@@ -161,17 +161,24 @@
         //  if we use setTimeout() then the fastest resolved rejected error will be the output.
 
         
+//102. Fetch(): Fetch API is an asynchronous web API that comes with native JavaScript, and it returns the data in the form of promises.
+        // The fetch() method starts the process of fetching a resource from a server.
+        // The fetch() method returns a Promise that resolves to a Response object.
 
 
+//103. Promise.allSetteled(): in Promise.all()--> if any promise rejected , it only show the latest rejected error, to overcome this we use Promise.allSettled(). This will print every promise data as individual object it can be resolved as well as rejected. 
+        // let p = Promise.allSettled([promise1,promise2,promise3]);
 
+//104. Promise.race(): This function is like Promise.all, but instead of waiting for all promises to settle, it only waits for the first one to settle and retrieves its result or error. the fastest one will it retrives: whearther is is resolved or rejected. Fatest resolved or rejected will be the output.
+        // let promiserace = Promise.race([promise1,promise2,promise3]);
 
+//105. Promise.any(): Although the initial promise was the quickest, it was rejected, and as a result, the second promise became the outcome. Once the first promise that was fulfilled wins the race, any additional outcomes are disregarded. promise.any() retrive fastest resolved one not the rejected one.  if every promise gets rejected then promise.any() will throw error.  let promiseany = Promise.any([promise4,promise5,promise6]);
 
+//106. The main difference b/w promise.any() and promise.race() is race() return the fasted settled promise it can be rejected and resolved both, and any() return the fastest resolved promise if all promise is rejected the any() throws error.
 
+//107. Async: Async simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event loop. async by default returns a fullfilled promise wheather it is a string number or a promise.
 
-
-
-
-
+//108. Await: Await function is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
 
 
 
