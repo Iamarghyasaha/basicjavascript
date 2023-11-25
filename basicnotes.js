@@ -1655,11 +1655,11 @@
 // }
 // const user = new User();
 // user.id = 321;
-// console.log(user);
+// console.log(user);// User { id: 321 }
 
 // In the above code, a User class is defined with a class field "id" that is initialized to 123. Then, an instance of the User class is created and stored in the "user" variable using the "new" keyword.After creating the instance, the code attempts to modify the "id" property of the user object by setting it to 321. When the user object is logged to the console, it will show the "id" property with the value 321.
 // class User {
-//     #id = 123;
+//     '#id = 123;'
 //     changeId(id){
 //         this.id = id;
 //     }
@@ -1677,11 +1677,11 @@
 
 //--------------------------------------------------------- Asynchronous JavaScript--------------------------------------------------------------
 
-//---------------------------------Async and Differ----------------------------
+//----------------------Async and Differ-------------------------
 
-// to run a website we considered: Html Parsing, js loading , js executing [css is not included]
+// To run a website we considered: Html Parsing, js loading , js executing [css is not included]
 
-// <script src="/basicnotes.js"></script> -->general
+// <script src="/basicnotes.js"></script> --->general
 
 // if script is written like this that means at first html parsing is stared, then when it encountered script it paused the html parsing and started the script downloading and after the completataion of the downloading it instsantly start the execution, and after the execution complete it again continues the html parsing where it left previously. So, here js is blocking the rendering of the HTML. It is not a good practise.
 

@@ -113,6 +113,27 @@
 
 //79. Prototype: Every object in Javascript has a hidden property called "Prototype".The value of this property can be null or a reference to another object.  Every subject can have only one prototype
 //80. "__proto__" is reserved keyword to declare a prototype it will not show in console it will show under hidden property prototype as nested property.
+//81. We can use Property Chaining to chain the Property
+
+//82. A Class serves as a blueprint for creating multiple objects with similar properties and methods.
+//83. Inheritance refers to the ability of a child class to inherit properties and methods from its parent class.-------> class Dell extends Laptop<-------super(ram, processor, generation);
+//84.  Static Method: Methods that are created inside a class, but the method as a whole is available to all objects of that class. For example, we can use Static Methods for sorting an employee database according to the performance of employees.
+//85. Static Property: These static properties are defined using static keyword. static id = 1; // Declare a static property to keep track of IDs, this.id = Children.id++; // Assign a unique ID to each child
+
+//86. Private Properties: Private properties refers to class properties that are only accessible within the class itself and cannot be accessed or modified from outside the class. way to use private property #id = 123; we declare another method to  change the private property 
+
+
+//************Asynchronous JavaScript*************/
+
+//87. To run a website we considered: Html Parsing, js loading , js executing [css is not included]
+//88. <script src="/basicnotes.js">--->if script is written like this that means at first html parsing is stared, then when it encountered script it paused the html parsing and started the script downloading and after the completataion of the downloading it instsantly start the execution, and after the execution complete it again continues the html parsing where it left previously. So, here js is blocking the rendering of the HTML. It is not a good practise.
+
+//89. <script async src="/basicnotes.js">--->if script is written like this then with html parsing script will start fetching asyncronously with the html parsing, as soon as the script fetched instantly then the script started executing and the html parsing pasused till the execution end after the execution end the html again starts parsing.
+
+//90. <script differ src="/basicnotes.js">--->if script is written with differ the the html starts parsing and with this js fetched from the network. it waits till the html fully parsed then only js starts executing.
+
+
+
 
 
 
