@@ -145,7 +145,23 @@
 //97. Promise: Promise is an object that has the status of an async operation, and it's corresponding value. either a promise can be resolved or it can be rejected (At first it will be in Pending status)
 //98. A promise in JavaScript represents the eventual outcome of an asynchronous operation and its value, whether successful or failed. Promises are commonly used to handle various asynchronous tasks such as fetching data from an API, reading files, or waiting for a timer to expire.Consider Promise as a special Object in Javascript which has different states and corresponding different values of each state.A promise is initially in a pending state and changes to either a "Fulfilled" or "rejected" state depending on whether the promise was resolved or rejected. Initially, the value of the promise is undefined and changes to the value of the resolve(value) method if the promise is successful or changes to an error in case the reject(error) method is called.
 //99. resolve and reject are callback function are provided by js itself
+
 //100. Attaching Multiple Handelers to a promise: It is different than promise chaining method, because in promise chaining one then returns a value, that uses in the next cahining, but Attaching Multiple Handelers it don't uses previous returned value.  p1.then()---->this called handelers
+
+//101. Promise Api Methods: There are 6 static methods of Promise class
+
+//101: Promise.all():
+        //  Promise.all: takes array of promises
+        //  Promise.all():  to execute multiple promises in parallel and wait until all of them are ready. 
+        //  Promise.all(): either resoved the array of resolved value or the latest error
+        //  if we use setTimeout with different timeout also it will resolve wait until all of them are ready
+        //  let arrofpromises = [promise1,promise2,promise3];
+        //  promise.then((response)=>console.log(response));// O/P:(returns array response of resolved promises)// [ 'Promise1 resolved', 'Promise2 resolved', 'Promise3 resolved' ]
+        //  it will return the value of the recent error which occur
+        //  if we use setTimeout() then the fastest resolved rejected error will be the output.
+
+        
+
 
 
 

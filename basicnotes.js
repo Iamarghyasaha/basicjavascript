@@ -1939,7 +1939,8 @@
 //   setTimeout(()=>{
 //     resolve(2)
 //   },2000)
-// }).then((response)=>console.log(response));// 2
+// })
+// //.then((response)=>console.log(response));// 2
 // p1.then(()=>console.log("Promise is resolved"));
 // p1.then((response)=>{
 //   console.log("Hurry!!")
@@ -1961,6 +1962,7 @@
 //  Promise.All([arrayofPromise])
 //  https://api.github.com/users/prakashsakari
 //  https://api.github.com/users/AshishJangra27
+
 //  Promise.all: takes array of promises
 //  Promise.all():  to execute multiple promises in parallel and wait until all of them are ready. 
 //  Promise.all(): either resoved the array of resolved value or the latest error
@@ -1970,7 +1972,9 @@
 //   resolve("Promise1 resolved")
 // })
 // let promise2 = new Promise((resolve)=>{
-//   resolve("Promise2 resolved")
+//   setTimeout(()=>{
+//     resolve("Promise2 resolved")// setTImeout will not effect the sequence
+//   },10000)
 // })
 // let promise3 = new Promise((resolve)=>{
 //   resolve("Promise3 resolved")
@@ -1983,6 +1987,7 @@
 // Promise1 resolved
 // Promise2 resolved
 // Promise3 resolved
+
 // instead of the upper code we can :
 // let arrofpromises = [promise1,promise2,promise3];
 // let p = Promise.all(arrofpromises);
