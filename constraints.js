@@ -124,7 +124,6 @@
 
 
 //************Asynchronous JavaScript*************/
-
 //87. To run a website we considered: Html Parsing, js loading , js executing [css is not included]
 //88. <script src="/basicnotes.js">--->if script is written like this that means at first html parsing is stared, then when it encountered script it paused the html parsing and started the script downloading and after the completataion of the downloading it instsantly start the execution, and after the execution complete it again continues the html parsing where it left previously. So, here js is blocking the rendering of the HTML. It is not a good practise.
 
@@ -133,7 +132,17 @@
 //90. <script differ src="/basicnotes.js">--->if script is written with differ the the html starts parsing and with this js fetched from the network. it waits till the html fully parsed then only js starts executing.
 
 
+//91. Callback FUnction: A callback function is a function that is passed as an argument to another function and is invoked or called by that function at a certain point in time.
+//92.  Async programming is a programming model that allows code to run asynchronously or non-blocking. This means that while a task is being executed, other code can continue to run concurrently without waiting for the task to complete.
+//93. Event Loop: In JavaScript, an event loop is a mechanism that enables asynchronous programming. The event loop works by continuously processing a queue of events and executing any associated callbacks or functions. Event Loop is the heart of the async js is this event loop.
 
+//94. Callback Queue: In JavaScript, the callback queue is a mechanism used by the event loop to manage asynchronous code execution. Whenever an asynchronous operation is performed, such as a timer set by setTimeout() or an HTTP request made by fetch(), the associated callback function is added to the callback queue.The event loop constantly monitors the callback queue and executes the callbacks in the order in which they were added, one at a time. This ensures that the JavaScript runtime remains single-threaded and that no two callbacks are executed simultaneously.2 types of callback queue.
+//95. 1. Task Callback Queue-->Least Priority Task ---> here the callback function of the setTimeout(), Dom Apis
+//    2. Micro Task Callback Queue-->high Priority task--> the callback function of the promise should be in this and fetch() is also consider but after promise
+
+//96. Callback hell: In JavaScript, the scenario where the code becomes densely nested and challenging to read due to the overuse of callbacks is referred to as "callback hell."In order to resolve these issues we use promises and the async-await style of async programming.
+
+//97. 
 
 
 

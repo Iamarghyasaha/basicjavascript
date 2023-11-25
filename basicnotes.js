@@ -1714,8 +1714,7 @@
 //
 //-------------------CallBack Function--------------------
 
-
-// Callback FUnction: A callback function is a function that is passed as an argument to another function and is invoked or called by that function at a certain point in time.
+// Callback Function: A callback function is a function that is passed as an argument to another function and is invoked or called by that function at a certain point in time.
 
 // function a(wrapper){ // a function is passed as an aurgument to another function can be called as wrapper function
 //   console.log("Main Function");
@@ -1732,17 +1731,20 @@
 // console.log("this is a call back function executed after 4 sec");// callback function will executed after 4 sec
 // },4000)
 
-// another example with fetch
-// fetch('https://jsonplaceholder.typicode.com/posts/1')// after fetching this
-//   .then(response => response.json()) // then give the response into json format
+// another example with fetch:
+
+// let promise= fetch('https://jsonplaceholder.typicode.com/posts/1')// after fetching this
+//   promise.then(response =>{
+//     return response.json()// then give the response into json format-
+//   } ) 
+//   .then(data=>console.log(data))
 //   .catch(error => console.error(error));
 
-//Here we are making a network call to fetch some data from the JSON placeholder and we are waiting for the response to come back, once we receive the response our callback function is executed which is passed as an argument to the then method. In case Our response fails, our callback function for the catch method is called.
-
+// Here we are making a network call to fetch some data from the JSON placeholder and we are waiting for the response to come back, once we receive the response our callback function is executed which is passed as an argument to the then method. In case Our response fails, our callback function for the catch method is called.
 
 //----------------------------------------------How asyncronise JS works------------------------------------------------
 
-//Async programming is a programming model that allows code to run asynchronously or non-blocking. This means that while a task is being executed, other code can continue to run concurrently without waiting for the task to complete.
+// Async programming is a programming model that allows code to run asynchronously or non-blocking. This means that while a task is being executed, other code can continue to run concurrently without waiting for the task to complete.
 
 // console.log("let's begin");
 // setTimeout(()=>{
@@ -1754,7 +1756,7 @@
 // Bye bye
 // Wait fot 4 sec
 
-// this is the beauty of async js the execution will not wait for the timer API to execute the callback function then go to another line and in back browser starts 4000ms timer. Instead of the js engine execute the next line and after 4 sec the callback function goes to the call stack and execute. But the callback function will not directly go to the call stack. In between there is Event Loop and callback Queue. Actualluy after The timer api expires then the callback function pushes to the callback Queue. The job of the event loop is continuously keep on monitoring the call stack and the callback queue, the call stack is empty or not then push the callback function to the call stack to execute.
+// This is the beauty of async js the execution will not wait for the timer API to execute the callback function then go to another line and in back browser starts 4000ms timer. Instead of the js engine execute the next line and after 4 sec the callback function goes to the call stack and execute. But the callback function will not directly go to the call stack. In between there is Event Loop and callback Queue. Actualluy after The timer api expires then the callback function pushes to the callback Queue. The job of the event loop is continuously keep on monitoring the call stack and the callback queue, the call stack is empty or not then push the callback function to the call stack to execute.
 
 // how it is possible to execution the callback after 4 sec? --> actually there is a concept called Event loop inside the browser 
 // Event Loop is the heart of the async js is this event loop
@@ -1763,9 +1765,10 @@
 
 // Callback Queue: In JavaScript, the callback queue is a mechanism used by the event loop to manage asynchronous code execution. Whenever an asynchronous operation is performed, such as a timer set by setTimeout() or an HTTP request made by fetch(), the associated callback function is added to the callback queue.The event loop constantly monitors the callback queue and executes the callbacks in the order in which they were added, one at a time. This ensures that the JavaScript runtime remains single-threaded and that no two callbacks are executed simultaneously.
 // 2 types of call back queue 
-// 1. Task Callback Queue-->Least Priority Task ---> here the callback function of the setTimeout(), Dom Apis
-// 2.Micro Task Callback Queue-->high Priority task--> the callback function of the promise should be in this and fetch() is also consider but after promise
 
+// 1. Task Callback Queue-->Least Priority Task ---> here the callback function of the setTimeout(), Dom Apis
+// 2. Micro Task Callback Queue-->high Priority task--> the callback function of the promise should be in this and fetch() is also consider but after promise
+//****IMP*****/
 // console.log("lets Start");   // line1
 // const btnAddtoCart = document.getElementById("btn");  //line2
 // btnAddtoCart.addEventListener("click",()=> {     //line3
@@ -1773,12 +1776,13 @@
 // });
 // console.log("Bye Bye ......");
 
-// Initially, the line1 console.log("Let Start") is printed then js engine moves to the next line and extracts the node from the DOM and saves its reference in a variable called btnAddtoCart.Then as soon it encounters line 3, event listener is registered in the web-API and the js engine moves forward and prints the last line console.log("Bye Bye ").Once a user clicks on the button to which the event listener is attached, the callback is pushed into the callback queue, and once the event loop finds the call stack as empty callback queue pushes the callback function into the call stack, and the function gets executed.
+// Initially, the line1 console.log("Let Start") is printed then js engine moves to the next line and extracts the node from the DOM and saves its reference in a variable called btnAddtoCart.Then as soon it encounters line 3, event listener is registered in the web-API and the js engine moves forward and prints the last line console.log("Bye Bye ").Once a user clicks on the button to which the event listener is attached, the callback is pushed into the Task callback queue, and once the event loop finds the call stack as empty callback queue pushes the callback function into the call stack, and the function gets executed.
 
 //-------------------------------------------------------------------------------------------------------------------------------------------
 
 //callback hell: In JavaScript, the scenario where the code becomes densely nested and challenging to read due to the overuse of callbacks is referred to as "callback hell."
 //This bellow senario is called callback hell:
+
 // bookHotel(hotelId,function(){
 //   if(err){
 //       errorHandler();
@@ -1800,6 +1804,7 @@
 //       })
 //     }
 // })
+
 //  If you take a look at the above code it is clear that our code is expanding in the horizontal direction instead of the vertical direction which is considered a bad practice in programming as it makes the code less readable and difficult to identify bugs as well.
 //  In order to resolve these issues we use promises and the async-await style of async programming.
 
@@ -2006,6 +2011,9 @@
 
 
 //*******************************************Fetch()************************************
+// Fetch API is an asynchronous web API that comes with native JavaScript, and it returns the data in the form of promises
+// The fetch() method starts the process of fetching a resource from a server.
+// The fetch() method returns a Promise that resolves to a Response object.
 
 //  https://api.github.com/users/prakashsakari
 //  https://api.github.com/users/AshishJangra27
