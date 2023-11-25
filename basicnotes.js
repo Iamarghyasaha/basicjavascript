@@ -2112,6 +2112,7 @@
 // async function returnsome2(){
 //   return "sakari";
 // }
+// console.log(returnsome2()); // Promise { 'sakari' }--> returns promise when function is async
 // const value1 = returnsome2();
 // console.log(value1);// Promise { 'sakari' }--> returns promise when function is async
 
@@ -2149,8 +2150,8 @@
 //----------------------------------------------------------
 // const getuserdata = async()=>{
 //   try{
-//     const promise = await fetch(" https://api.github.com/users/prakashsakari");
-//     const response = await promise.json();
+//     const promise = await fetch(" https://api.github.com/users/prakashsakari"); // 1. await written means till fetching the promise wait, don't go to next line
+//     const response = await promise.json();// 2.wait till it is coverted as json()
 //     console.log(response);// the total json object
 //     console.log(response.login); // it will return the login attriibute of the object
 //   }catch(err){
