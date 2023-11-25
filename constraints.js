@@ -136,15 +136,16 @@
 //92.  Async programming is a programming model that allows code to run asynchronously or non-blocking. This means that while a task is being executed, other code can continue to run concurrently without waiting for the task to complete.
 //93. Event Loop: In JavaScript, an event loop is a mechanism that enables asynchronous programming. The event loop works by continuously processing a queue of events and executing any associated callbacks or functions. Event Loop is the heart of the async js is this event loop.
 
-//94. Callback Queue: In JavaScript, the callback queue is a mechanism used by the event loop to manage asynchronous code execution. Whenever an asynchronous operation is performed, such as a timer set by setTimeout() or an HTTP request made by fetch(), the associated callback function is added to the callback queue.The event loop constantly monitors the callback queue and executes the callbacks in the order in which they were added, one at a time. This ensures that the JavaScript runtime remains single-threaded and that no two callbacks are executed simultaneously.2 types of callback queue.
+//94. Callback Queue: In JavaScript, the callback queue is a mechanism used by the event loop to manage asynchronous code execution. *******Whenever an asynchronous operation is performed, such as a timer set by setTimeout() or an HTTP request made by fetch(), the associated callback function is added to the callback queue.********The event loop constantly monitors the callback queue and executes the callbacks in the order in which they were added, one at a time. This ensures that the JavaScript runtime remains single-threaded and that no two callbacks are executed simultaneously.2 types of callback queue.
 //95. 1. Task Callback Queue-->Least Priority Task ---> here the callback function of the setTimeout(), Dom Apis
 //    2. Micro Task Callback Queue-->high Priority task--> the callback function of the promise should be in this and fetch() is also consider but after promise
 
 //96. Callback hell: In JavaScript, the scenario where the code becomes densely nested and challenging to read due to the overuse of callbacks is referred to as "callback hell."In order to resolve these issues we use promises and the async-await style of async programming.
 
-//97. 
-
-
+//97. Promise: Promise is an object that has the status of an async operation, and it's corresponding value. either a promise can be resolved or it can be rejected (At first it will be in Pending status)
+//98. A promise in JavaScript represents the eventual outcome of an asynchronous operation and its value, whether successful or failed. Promises are commonly used to handle various asynchronous tasks such as fetching data from an API, reading files, or waiting for a timer to expire.Consider Promise as a special Object in Javascript which has different states and corresponding different values of each state.A promise is initially in a pending state and changes to either a "Fulfilled" or "rejected" state depending on whether the promise was resolved or rejected. Initially, the value of the promise is undefined and changes to the value of the resolve(value) method if the promise is successful or changes to an error in case the reject(error) method is called.
+//99. resolve and reject are callback function are provided by js itself
+//100. Attaching Multiple Handelers to a promise: It is different than promise chaining method, because in promise chaining one then returns a value, that uses in the next cahining, but Attaching Multiple Handelers it don't uses previous returned value.  p1.then()---->this called handelers
 
 
 

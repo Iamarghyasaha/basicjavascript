@@ -1814,7 +1814,7 @@
 
 // either a promise can be resolved or it can be rejected (At first it will be in Pending status)
 
-//A promise in JavaScript represents the eventual outcome of an asynchronous operation and its value, whether successful or failed. Promises are commonly used to handle various asynchronous tasks such as fetching data from an API, reading files, or waiting for a timer to expire.Consider Promise as a special Object in Javascript which has different states and corresponding different values of each state.A promise is initially in a pending state and changes to either a "Fulfilled" or "rejected" state depending on whether the promise was resolved or rejected. Initially, the value of the promise is undefined and changes to the value of the resolve(value) method if the promise is successful or changes to an error in case the reject(error) method is called.
+//A promise in JavaScript represents the eventual outcome of an asynchronous operation and its value, whether successful or failed. Promises are commonly used to handle various asynchronous tasks such as fetching data from an API, reading files, or waiting for a timer to expire.Consider Promise as a special Object in Javascript which has different states and corresponding different values of each state. A promise is initially in a pending state and changes to either a "Fulfilled" or "rejected" state depending on whether the promise was resolved or rejected. Initially, the value of the promise is undefined and changes to the value of the resolve(value) method if the promise is successful or changes to an error in case the reject(error) method is called.
 
 
 // const URL = "https://goweather.herokuapp.com/weather/Ny";
@@ -1863,7 +1863,7 @@
 
 // })
 // promise
-//   .then((response)=>console.log(response))// .then *response* is for resolved
+//   .then((response)=>console.log(response))// .then *response* is for resolved // o/p: [ { id: 1, name: 'Arghya' }, { id: 2, name: 'Arun' } ]
 //   .catch((err)=>console.log(err.message));
 
 // ************************Simple Understanding of promise: ***************************
@@ -1887,8 +1887,8 @@
 // pro2.catch((err)=>{// this err is coming from the reject
 //   console.log(err.message);
 // })
+
 //O/P:
-// Completed
 // Completed
 // resolved promise
 // Error occured
@@ -1925,7 +1925,7 @@
 
 
 //-----------------------------------Attaching Multiple Handelers to a promise------------------------------
-// it is different than promise chaining method, because in promise chaining one then returns a value, that uses in the next cahining
+// It is different than promise chaining method, because in promise chaining one then returns a value, that uses in the next cahining
 // but Attaching Multiple Handelers it don't uses previous returned value
 
 // p1.then()---->this called handelers
@@ -1950,6 +1950,7 @@
 //   })
 // }).then((response)=>console.log(response));//  4
 
+// 2
 // Promise is resolved
 // Hurry!!
 // 4
