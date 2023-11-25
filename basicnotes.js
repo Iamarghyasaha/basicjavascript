@@ -2160,6 +2160,47 @@
 // }
 // getuserdata();
 
+//-----------------------Elaborated Async and Await--------------------------------
+// async function fun1(){
+//   let p1 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//       resolve(1);
+//     },2000)
+//   })
+//   let p2 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//       resolve(2);
+//     },5000)
+//   })
+//   let p3 = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//       resolve(3);
+//     },1000)
+//   })
+//   console.log("strat 1")
+//   let first = await p1;// 1. waits till the p1 settled, setTimeout will not effect
+//   console.log("strat 2")
+//   let second= await p2;// 2. waits till the p2 settled, setTimeout will not effect
+//   console.log("strat 3")
+//   let third = await p3;// 3. waits till the p3 settled, setTimeout will not effect
+//   return [first,second,third]
+// }
+// function fun2(){ // this function will run paralally with the async function, await doesn't effect this function's execution.
+//   console.log("Inside Fun 2") 
+// }
+
+// let test = fun1();
+// test.then((value)=>{
+//   console.log(value)
+// })
+// fun2();
+
+//O/P:
+// strat 1
+// Inside Fun 2
+// strat 2
+// strat 3
+// [ 1, 2, 3 ]
 
 
 
