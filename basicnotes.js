@@ -2096,9 +2096,12 @@
 
 //--------------------------------------Async and Wait---------------------------------------------
 
-// Async: Async simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event loop. async by default returns a fullfilled promise wheather it is a string number or a promise.
+// Async: Async simply allows us to write promises-based code as if it was synchronous and it checks that we are not breaking the execution thread. It operates asynchronously via the event loop. async by-default returns a fullfilled promise wheather it is a string number or a promise.
 
-//Await: Await function is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait.
+//Await: Await function is used to wait for the promise. It could be used within the async block only. It makes the code wait until the promise returns a result. It only makes the async block wait. (await means in simple words wait untill i'm not resolved)
+
+//Async tells that it will return a promise and await tells that wait till this promise is not executed. By this we can control function execution, suppose we want after execution of this then only next line should be execute it can be done by await.
+
 
 // function returnsome1(){
 //   return "Prakash";
@@ -2123,7 +2126,7 @@
 // promise.then((response)=>{console.log(response)});// done done
 
 // async and await is the elegent way of writting the promise
-// async is the keyword to make the return value of any function to a primise
+// async is the keyword to make the return value of any function to a promise
 
 // async function returnsome(){
 //   const promise = new Promise((resolve)=> resolve("Promise done"));
