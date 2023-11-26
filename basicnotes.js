@@ -1,4 +1,4 @@
-// ------------------------------Variable Initialization and errors -----------------------
+// ----------------------------Variable Initialization and errors -----------------------
 // const pname="";
 // pname="dkdk";//--->error
 // console.log(pname);
@@ -1319,6 +1319,15 @@
 //    console.log(arr);// [ 4, 5, 6, 7, 6, 8 ]
 // }
 // addelement(4,5,6,7,6,8);
+//*****************any no. of parameters sum**************/
+// function fun(){ 
+//   let sum = 0; 
+//   for(let i of arguments){
+//     sum=sum+i;
+//   } 
+//   return sum
+// }
+// console.log(fun(4,5,6,8,9));
 //-------------------------------------------------------------
 // ***************default value in function********************
 
@@ -1362,7 +1371,7 @@
 // arrayadd(7,9,5,7,9,2,4);
 //
 //--------------------------------------Recursion-----------------------------------------------
- // recursion is a programming term where the function calls itself
+// recursion is a programming term where the function calls itself
 //*************sum of numbers **********
 // function calsum(number){
 //     let sum = 0;
@@ -1384,7 +1393,7 @@
 // }
 // console.log(factorial(5));
 
-//------------------------------------------Closure-----------------------------------------------
+//------------------------------------------Closure--------------------------------------------
 // A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. Since JavaScript is event-driven so closures are useful as it helps to maintain the state between events.
 
 // Closure is the concept of function + lexical environment in which function it was created. so every function declared within another function then it has access to the scope chain of the outer function and the variables created within the scope of the outer function will not get destroyed.
@@ -1647,7 +1656,7 @@
 // console.log(user3.count);// undefined
 // console.log(User.count);//3
 
-//----------------------------------------Private Properties--------------------------------------------
+//----------------------------------------Private Properties--------------------------------------
 // Private Properties: Private properties refers to class properties that are only accessible within the class itself and cannot be accessed or modified from outside the class. 
 
 // class User {
@@ -2159,7 +2168,7 @@
 //   }
 // }
 // getuserdata();
-
+//
 //-----------------------Elaborated Async and Await--------------------------------
 // async function fun1(){
 //   let p1 = new Promise((resolve,reject)=>{

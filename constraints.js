@@ -41,7 +41,7 @@
 //33. either you add function inside object like this by key as function name and parameter as function{},e.g., greet: function  (){}
 //34. [course]: "course not available" // this [] bracket tells course is a variable not a direct key, const course = rl.question("tell the course: ")--whatever course you input it will take as a variable 
 //35. add element into obj: like obj.usercity = "kolkata"; // we can add element like this
-//36. "key" in object will return true if the key is present in the object and return false if it is not in the object
+//36. "key" in object will return true if the key is present in the object and return false if it is not in the object.
 
 //37. In object aslo take shallow copy and copied object referencing to the main object. In simple words object copied by reference not value.
 //38. In place of spread operator here we use---***Object.assign(target,source)***---to copy object to different object, it is alos a shallow copy[const obj2 = Object.assign({},obj1);]
@@ -66,11 +66,12 @@
 //53. sayname.apply(obj1,["B.tech", "2022"]); // Arghya B.tech 2022 // in apply() if there any parameters, we pass parameters as array of strings 
 //54. const res = sayname.bind(obj1,"B.tech"); // takes object as first parameter and store to an variable then call the variable, even you can add more parameters to the variable at the time of calling,--> res(); // Arghya B.tech undefined, res("2022"); // Arghya B.tech 2022 ---> we can pass parameter this way also.
 
-//55.Constructor function technically is a regular function. It has 2 convention. They are named with capital letter first. they should be executed only with "new" operator,it works like class and object pattern
+//55. Constructor function technically is a regular function. It has 2 convention. They are named with capital letter first. they should be executed only with "new" operator,it works like class and object pattern
 
 //***********Higher Order Function*************/
 
 //56. Pure Function: A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. It does not depend on any state or data change during a program's execution. Rather, it only depends on its input arguments.The result should not be influenced by the outer parameter. It should not mutate the original argument.
+
 //57. First-Class Function: A programming language is said to have First-class functions if functions in that language are treated like other variables. So the functions can be assigned to any other variable or passed as an argument or can be returned by another function. JavaScript treat function as a first-class-citizens. Function takes another function as aurgument and also can return another function.
 //58. If a function is returning another function which is nested inside that function then it to access it we have to use prarentfunction()() or we have to store it to another variable and again call the varible which conataining the reference of that function.
 
@@ -85,20 +86,21 @@
 // i.e.; const reducefunc = arr.reduce((acc,curr)=>acc+curr);
 // const reducefunc1 = arr1.reduce(((acc,curr) => acc*curr),2); // acc containing 2 from the first itreation of result will be multiplied by 2.
 
-//64. Argument object in non arrow function: argument object is an array like object present locally inside a function and it contains value of all the argument passed to the function
+//64. Argument object in non arrow function: argument object is an array like object present locally inside a function and it contains value of all the argument passed to the function. function fun(){ let sum = 0; for(let i of arguments){sum=sum+i} return sum}// console.log(fun(7,8,9,9,7))
 
 //65. The rest parameter is an improved way to handle function parameters, allowing us to more easily handle various inputs as parameters in a function. The rest parameter syntax allows us to represent an indefinite number of arguments as an array. Rest should be the last parameter in arguments. const arr = [7,9,5,7,9,2,4]; function arrayadd(...rest){}
 // function arrayadd(a,b,...rest){}
 
-//66. Closure: A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. Since JavaScript is event-driven so closures are useful as it helps to maintain the state between events.A closure is the combination of the function bundled together with reference to its lexical environments is known as closure. In other words - A closure is a function that remembers its outer variable and can access them.
+//66. Closure: A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. Since JavaScript is event-driven so closures are useful as it helps to maintain the state between events. A closure is the combination of the function bundled together with reference to its lexical environments is known as closure. In other words - A closure is a function that remembers its outer variable and can access them.
 
 //**********DOM************/
+
 //67. There are some DOM Selectors. By which we are selecting the dom like (getElementByID,querySelector,.....)
 //68. getElementById('Idname').id// it will give the id
 //69. getElementById('Idname').className// it will give the class name---> we cant access class directly by .class
 
 //70. we can also get attribute with the dom selector. getElementById('Idname').getAttribute('id') // it will give the id name
-//71. as get attribute we can also set the attribute:  getElementById('Idname').setAttribute('class','classname') // the classattribute will be change in the dom
+//71. as get attribute we can also set the attribute: getElementById('Idname').setAttribute('class','classname') // the classattribute will be change in the dom
 //72. we can implement style aslo getElementById('Idname').style.backgroundColor = 'red';
 
 //73. we can access the content with the help of (innerHTML,innerText,textContent)
@@ -125,12 +127,12 @@
 
 //************Asynchronous JavaScript*************/
 //87. To run a website we considered: Html Parsing, js loading , js executing [css is not included]
+
 //88. <script src="/basicnotes.js">--->if script is written like this that means at first html parsing is stared, then when it encountered script it paused the html parsing and started the script downloading and after the completataion of the downloading it instsantly start the execution, and after the execution complete it again continues the html parsing where it left previously. So, here js is blocking the rendering of the HTML. It is not a good practise.
 
 //89. <script async src="/basicnotes.js">--->if script is written like this then with html parsing script will start fetching asyncronously with the html parsing, as soon as the script fetched instantly then the script started executing and the html parsing pasused till the execution end after the execution end the html again starts parsing.
 
 //90. <script differ src="/basicnotes.js">--->if script is written with differ the the html starts parsing and with this js fetched from the network. it waits till the html fully parsed then only js starts executing.
-
 
 //91. Callback FUnction: A callback function is a function that is passed as an argument to another function and is invoked or called by that function at a certain point in time.
 //92.  Async programming is a programming model that allows code to run asynchronously or non-blocking. This means that while a task is being executed, other code can continue to run concurrently without waiting for the task to complete.
